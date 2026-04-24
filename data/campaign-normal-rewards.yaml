@@ -1,17 +1,18 @@
 source: https://schaledb.com/data/jp/stages.json
-generated_at: "2026-04-24T12:59:03.785Z"
+generated_at: "2026-04-24T15:31:55.831Z"
 difficulty: normal
 excluded:
   - Difficulty === 1 (Hard)
   - Area % 3 === 0 (challenge areas without equipment drops)
   - Tier1 完成品装備（4桁ID）
-  - Currency / GachaGroup
+  - Currency / 装備以外の GachaGroup (500100 など)
   - RewardType === "FirstClear" | "ThreeStar"
   - 設計図が1種もドロップしないステージ
 notes:
   label: "\"任務{Area}-{Stage}\" 形式。Area は元の番号のまま（3の倍数を飛ばすが詰めない）。"
   expected: Σ(slot.amount × (slot.chance ?? 1))。スロット同士は独立抽選のため単純合算。
-  slots: 未指定 chance は確定ドロップ（= 1.0）として期待値計算。
+  slots: "未指定 chance は確定ドロップ（= 1.0）として期待値計算。source: \"gacha\" は GachaGroup 由来のサブドロップ。"
+  gacha_group: GachaGroup は groups.json の内部抽選テーブルで子装備に展開し、親chance × 子chance × 個数 で期待値加算。
 total_stages: 90
 stages:
   - label: 任務4-1
@@ -1103,6 +1104,33 @@ stages:
           - amount: 2
           - amount: 1
             chance: 0.25
+      - id: 102001
+        name: ニットのミトンの設計図
+        category: Gloves
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103001
+        name: ムートンブーツの設計図
+        category: Shoes
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 102003
         name: レザーグローブの設計図
         category: Gloves
@@ -1156,6 +1184,33 @@ stages:
           - amount: 2
           - amount: 1
             chance: 0.25
+      - id: 104001
+        name: 寒冷地用バッグの設計図
+        category: Bag
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 102001
+        name: ニットのミトンの設計図
+        category: Gloves
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104003
         name: 紺色のスクールバッグの設計図
         category: Bag
@@ -1209,6 +1264,33 @@ stages:
         expected: 3
         slots:
           - amount: 3
+      - id: 102001
+        name: ニットのミトンの設計図
+        category: Gloves
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 103001
+        name: ムートンブーツの設計図
+        category: Shoes
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 102003
         name: レザーグローブの設計図
         category: Gloves
@@ -1262,6 +1344,33 @@ stages:
           - amount: 2
           - amount: 1
             chance: 0.25
+      - id: 104001
+        name: 寒冷地用バッグの設計図
+        category: Bag
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 103001
+        name: ムートンブーツの設計図
+        category: Shoes
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104003
         name: 紺色のスクールバッグの設計図
         category: Bag
@@ -1315,6 +1424,33 @@ stages:
           - amount: 2
           - amount: 1
             chance: 0.25
+      - id: 105001
+        name: マナスルのフェルトバッジの設計図
+        category: Badge
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 104001
+        name: 寒冷地用バッグの設計図
+        category: Bag
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105003
         name: ベロニカの刺繍バッジの設計図
         category: Badge
@@ -1368,6 +1504,33 @@ stages:
           - amount: 2
           - amount: 1
             chance: 0.25
+      - id: 105001
+        name: マナスルのフェルトバッジの設計図
+        category: Badge
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105003
         name: ベロニカの刺繍バッジの設計図
         category: Badge
@@ -1421,6 +1584,33 @@ stages:
           - amount: 2
           - amount: 1
             chance: 0.25
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109001
+        name: 雪花のペンダントの設計図
+        category: Necklace
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 106003
         name: 翼のヘアピンの設計図
         category: Hairpin
@@ -1474,6 +1664,33 @@ stages:
           - amount: 2
           - amount: 1
             chance: 0.25
+      - id: 107001
+        name: 発熱カイロの設計図
+        category: Charm
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107003
         name: クルスの設計図
         category: Charm
@@ -1527,6 +1744,33 @@ stages:
         expected: 3
         slots:
           - amount: 3
+      - id: 107001
+        name: 発熱カイロの設計図
+        category: Charm
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 109001
+        name: 雪花のペンダントの設計図
+        category: Necklace
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 107003
         name: クルスの設計図
         category: Charm
@@ -1580,6 +1824,33 @@ stages:
         expected: 3
         slots:
           - amount: 3
+      - id: 105001
+        name: マナスルのフェルトバッジの設計図
+        category: Badge
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 107001
+        name: 発熱カイロの設計図
+        category: Charm
+        tier: 2
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 109001
+        name: 雪花のペンダントの設計図
+        category: Necklace
+        tier: 2
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 105003
         name: ベロニカの刺繍バッジの設計図
         category: Badge
@@ -1633,6 +1904,60 @@ stages:
           - amount: 3
           - amount: 1
             chance: 0.75
+      - id: 102001
+        name: ニットのミトンの設計図
+        category: Gloves
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103001
+        name: ムートンブーツの設計図
+        category: Shoes
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102002
+        name: ペロロの鍋掴みの設計図
+        category: Gloves
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103002
+        name: ピンキーパカのスリッパの設計図
+        category: Shoes
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 102004
         name: タクティカルグローブの設計図
         category: Gloves
@@ -1686,6 +2011,60 @@ stages:
           - amount: 3
           - amount: 1
             chance: 0.75
+      - id: 105001
+        name: マナスルのフェルトバッジの設計図
+        category: Badge
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102001
+        name: ニットのミトンの設計図
+        category: Gloves
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105002
+        name: アングリーアデリーのバッジの設計図
+        category: Badge
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 102002
+        name: ペロロの鍋掴みの設計図
+        category: Gloves
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105004
         name: カゼヤマのワッペンの設計図
         category: Badge
@@ -1739,6 +2118,60 @@ stages:
         expected: 5
         slots:
           - amount: 5
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 103001
+        name: ムートンブーツの設計図
+        category: Shoes
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 103002
+        name: ピンキーパカのスリッパの設計図
+        category: Shoes
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 106004
         name: 多目的ヘアピンの設計図
         category: Hairpin
@@ -1792,6 +2225,60 @@ stages:
           - amount: 3
           - amount: 1
             chance: 0.75
+      - id: 104001
+        name: 寒冷地用バッグの設計図
+        category: Bag
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103001
+        name: ムートンブーツの設計図
+        category: Shoes
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104002
+        name: ペロロのバッグの設計図
+        category: Bag
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103002
+        name: ピンキーパカのスリッパの設計図
+        category: Shoes
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104004
         name: 戦闘用ランドセルの設計図
         category: Bag
@@ -1845,6 +2332,60 @@ stages:
           - amount: 3
           - amount: 1
             chance: 0.75
+      - id: 105001
+        name: マナスルのフェルトバッジの設計図
+        category: Badge
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 102001
+        name: ニットのミトンの設計図
+        category: Gloves
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105002
+        name: アングリーアデリーのバッジの設計図
+        category: Badge
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 102002
+        name: ペロロの鍋掴みの設計図
+        category: Gloves
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105004
         name: カゼヤマのワッペンの設計図
         category: Badge
@@ -1898,6 +2439,60 @@ stages:
           - amount: 3
           - amount: 1
             chance: 0.75
+      - id: 107001
+        name: 発熱カイロの設計図
+        category: Charm
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109001
+        name: 雪花のペンダントの設計図
+        category: Necklace
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107002
+        name: ペロロのお守りの設計図
+        category: Charm
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109002
+        name: ニコライのロケットペンダントの設計図
+        category: Necklace
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107004
         name: カモフラダルマの設計図
         category: Charm
@@ -1951,6 +2546,60 @@ stages:
           - amount: 3
           - amount: 1
             chance: 0.75
+      - id: 107001
+        name: 発熱カイロの設計図
+        category: Charm
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107002
+        name: ペロロのお守りの設計図
+        category: Charm
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107004
         name: カモフラダルマの設計図
         category: Charm
@@ -2004,6 +2653,60 @@ stages:
           - amount: 3
           - amount: 1
             chance: 0.75
+      - id: 104001
+        name: 寒冷地用バッグの設計図
+        category: Bag
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109001
+        name: 雪花のペンダントの設計図
+        category: Necklace
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104002
+        name: ペロロのバッグの設計図
+        category: Bag
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109002
+        name: ニコライのロケットペンダントの設計図
+        category: Necklace
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104004
         name: 戦闘用ランドセルの設計図
         category: Bag
@@ -2057,6 +2760,60 @@ stages:
         expected: 5
         slots:
           - amount: 5
+      - id: 105001
+        name: マナスルのフェルトバッジの設計図
+        category: Badge
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107001
+        name: 発熱カイロの設計図
+        category: Charm
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 105002
+        name: アングリーアデリーのバッジの設計図
+        category: Badge
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 107002
+        name: ペロロのお守りの設計図
+        category: Charm
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 105004
         name: カゼヤマのワッペンの設計図
         category: Badge
@@ -2110,6 +2867,60 @@ stages:
         expected: 5
         slots:
           - amount: 5
+      - id: 104001
+        name: 寒冷地用バッグの設計図
+        category: Bag
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 109001
+        name: 雪花のペンダントの設計図
+        category: Necklace
+        tier: 2
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 104002
+        name: ペロロのバッグの設計図
+        category: Bag
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 109002
+        name: ニコライのロケットペンダントの設計図
+        category: Necklace
+        tier: 3
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 104004
         name: 戦闘用ランドセルの設計図
         category: Bag
@@ -2163,6 +2974,60 @@ stages:
           - amount: 5
           - amount: 1
             chance: 0.25
+      - id: 102002
+        name: ペロロの鍋掴みの設計図
+        category: Gloves
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103002
+        name: ピンキーパカのスリッパの設計図
+        category: Shoes
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102003
+        name: レザーグローブの設計図
+        category: Gloves
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103003
+        name: アンティークなエナメルローファーの設計図
+        category: Shoes
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 102005
         name: レースのグローブの設計図
         category: Gloves
@@ -2216,6 +3081,60 @@ stages:
           - amount: 5
           - amount: 1
             chance: 0.25
+      - id: 105002
+        name: アングリーアデリーのバッジの設計図
+        category: Badge
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102002
+        name: ペロロの鍋掴みの設計図
+        category: Gloves
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105003
+        name: ベロニカの刺繍バッジの設計図
+        category: Badge
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 102003
+        name: レザーグローブの設計図
+        category: Gloves
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105005
         name: ココデビルのバッジの設計図
         category: Badge
@@ -2269,6 +3188,60 @@ stages:
         expected: 7
         slots:
           - amount: 7
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 103002
+        name: ピンキーパカのスリッパの設計図
+        category: Shoes
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 103003
+        name: アンティークなエナメルローファーの設計図
+        category: Shoes
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 106005
         name: コウモリのヘアピンの設計図
         category: Hairpin
@@ -2322,6 +3295,60 @@ stages:
           - amount: 5
           - amount: 1
             chance: 0.25
+      - id: 104002
+        name: ペロロのバッグの設計図
+        category: Bag
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103002
+        name: ピンキーパカのスリッパの設計図
+        category: Shoes
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104003
+        name: 紺色のスクールバッグの設計図
+        category: Bag
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103003
+        name: アンティークなエナメルローファーの設計図
+        category: Shoes
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104005
         name: デビルウイングのトートバッグの設計図
         category: Bag
@@ -2375,6 +3402,60 @@ stages:
           - amount: 5
           - amount: 1
             chance: 0.25
+      - id: 105002
+        name: アングリーアデリーのバッジの設計図
+        category: Badge
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 102002
+        name: ペロロの鍋掴みの設計図
+        category: Gloves
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105003
+        name: ベロニカの刺繍バッジの設計図
+        category: Badge
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 102003
+        name: レザーグローブの設計図
+        category: Gloves
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105005
         name: ココデビルのバッジの設計図
         category: Badge
@@ -2428,6 +3509,60 @@ stages:
           - amount: 5
           - amount: 1
             chance: 0.25
+      - id: 107002
+        name: ペロロのお守りの設計図
+        category: Charm
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109002
+        name: ニコライのロケットペンダントの設計図
+        category: Necklace
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107003
+        name: クルスの設計図
+        category: Charm
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109003
+        name: 十字架のチョーカーの設計図
+        category: Necklace
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107005
         name: 呪いの人形の設計図
         category: Charm
@@ -2481,6 +3616,60 @@ stages:
           - amount: 5
           - amount: 1
             chance: 0.25
+      - id: 107002
+        name: ペロロのお守りの設計図
+        category: Charm
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107003
+        name: クルスの設計図
+        category: Charm
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107005
         name: 呪いの人形の設計図
         category: Charm
@@ -2534,6 +3723,60 @@ stages:
           - amount: 5
           - amount: 1
             chance: 0.25
+      - id: 104002
+        name: ペロロのバッグの設計図
+        category: Bag
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109002
+        name: ニコライのロケットペンダントの設計図
+        category: Necklace
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104003
+        name: 紺色のスクールバッグの設計図
+        category: Bag
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109003
+        name: 十字架のチョーカーの設計図
+        category: Necklace
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104005
         name: デビルウイングのトートバッグの設計図
         category: Bag
@@ -2587,6 +3830,60 @@ stages:
         expected: 7
         slots:
           - amount: 7
+      - id: 105002
+        name: アングリーアデリーのバッジの設計図
+        category: Badge
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107002
+        name: ペロロのお守りの設計図
+        category: Charm
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 105003
+        name: ベロニカの刺繍バッジの設計図
+        category: Badge
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 107003
+        name: クルスの設計図
+        category: Charm
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 105005
         name: ココデビルのバッジの設計図
         category: Badge
@@ -2640,6 +3937,60 @@ stages:
         expected: 7
         slots:
           - amount: 7
+      - id: 104002
+        name: ペロロのバッグの設計図
+        category: Bag
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 109002
+        name: ニコライのロケットペンダントの設計図
+        category: Necklace
+        tier: 3
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 104003
+        name: 紺色のスクールバッグの設計図
+        category: Bag
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 109003
+        name: 十字架のチョーカーの設計図
+        category: Necklace
+        tier: 4
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 104005
         name: デビルウイングのトートバッグの設計図
         category: Bag
@@ -2693,6 +4044,60 @@ stages:
           - amount: 6
           - amount: 1
             chance: 0.75
+      - id: 102003
+        name: レザーグローブの設計図
+        category: Gloves
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103003
+        name: アンティークなエナメルローファーの設計図
+        category: Shoes
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102004
+        name: タクティカルグローブの設計図
+        category: Gloves
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103004
+        name: 戦闘用ブーツの設計図
+        category: Shoes
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 102006
         name: アームカバーの設計図
         category: Gloves
@@ -2746,6 +4151,60 @@ stages:
           - amount: 6
           - amount: 1
             chance: 0.75
+      - id: 105003
+        name: ベロニカの刺繍バッジの設計図
+        category: Badge
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102003
+        name: レザーグローブの設計図
+        category: Gloves
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105004
+        name: カゼヤマのワッペンの設計図
+        category: Badge
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 102004
+        name: タクティカルグローブの設計図
+        category: Gloves
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105006
         name: ストリートバッジの設計図
         category: Badge
@@ -2799,6 +4258,60 @@ stages:
         expected: 9
         slots:
           - amount: 9
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 103003
+        name: アンティークなエナメルローファーの設計図
+        category: Shoes
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 103004
+        name: 戦闘用ブーツの設計図
+        category: Shoes
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 106006
         name: カリグラフィーヘアピンの設計図
         category: Hairpin
@@ -2852,6 +4365,60 @@ stages:
           - amount: 6
           - amount: 1
             chance: 0.75
+      - id: 104003
+        name: 紺色のスクールバッグの設計図
+        category: Bag
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103003
+        name: アンティークなエナメルローファーの設計図
+        category: Shoes
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104004
+        name: 戦闘用ランドセルの設計図
+        category: Bag
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103004
+        name: 戦闘用ブーツの設計図
+        category: Shoes
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104006
         name: ストリートバッグの設計図
         category: Bag
@@ -2905,6 +4472,60 @@ stages:
           - amount: 6
           - amount: 1
             chance: 0.75
+      - id: 105003
+        name: ベロニカの刺繍バッジの設計図
+        category: Badge
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 102003
+        name: レザーグローブの設計図
+        category: Gloves
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105004
+        name: カゼヤマのワッペンの設計図
+        category: Badge
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 102004
+        name: タクティカルグローブの設計図
+        category: Gloves
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105006
         name: ストリートバッジの設計図
         category: Badge
@@ -2958,6 +4579,60 @@ stages:
           - amount: 6
           - amount: 1
             chance: 0.75
+      - id: 107003
+        name: クルスの設計図
+        category: Charm
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109003
+        name: 十字架のチョーカーの設計図
+        category: Necklace
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107004
+        name: カモフラダルマの設計図
+        category: Charm
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109004
+        name: ドッグタグの設計図
+        category: Necklace
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107006
         name: ポケット消臭剤の設計図
         category: Charm
@@ -3011,6 +4686,60 @@ stages:
           - amount: 6
           - amount: 1
             chance: 0.75
+      - id: 107003
+        name: クルスの設計図
+        category: Charm
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107004
+        name: カモフラダルマの設計図
+        category: Charm
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107006
         name: ポケット消臭剤の設計図
         category: Charm
@@ -3064,6 +4793,60 @@ stages:
           - amount: 6
           - amount: 1
             chance: 0.75
+      - id: 104003
+        name: 紺色のスクールバッグの設計図
+        category: Bag
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109003
+        name: 十字架のチョーカーの設計図
+        category: Necklace
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104004
+        name: 戦闘用ランドセルの設計図
+        category: Bag
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109004
+        name: ドッグタグの設計図
+        category: Necklace
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104006
         name: ストリートバッグの設計図
         category: Bag
@@ -3117,6 +4900,60 @@ stages:
         expected: 9
         slots:
           - amount: 9
+      - id: 105003
+        name: ベロニカの刺繍バッジの設計図
+        category: Badge
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107003
+        name: クルスの設計図
+        category: Charm
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 105004
+        name: カゼヤマのワッペンの設計図
+        category: Badge
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 107004
+        name: カモフラダルマの設計図
+        category: Charm
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 105006
         name: ストリートバッジの設計図
         category: Badge
@@ -3170,6 +5007,60 @@ stages:
         expected: 9
         slots:
           - amount: 9
+      - id: 104003
+        name: 紺色のスクールバッグの設計図
+        category: Bag
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 109003
+        name: 十字架のチョーカーの設計図
+        category: Necklace
+        tier: 4
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 104004
+        name: 戦闘用ランドセルの設計図
+        category: Bag
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 109004
+        name: ドッグタグの設計図
+        category: Necklace
+        tier: 5
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 104006
         name: ストリートバッグの設計図
         category: Bag
@@ -3223,6 +5114,60 @@ stages:
           - amount: 8
           - amount: 1
             chance: 0.25
+      - id: 102004
+        name: タクティカルグローブの設計図
+        category: Gloves
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103004
+        name: 戦闘用ブーツの設計図
+        category: Shoes
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103005
+        name: ヒールパンプスの設計図
+        category: Shoes
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 102007
         name: パールヤーングローブの設計図
         category: Gloves
@@ -3276,6 +5221,60 @@ stages:
           - amount: 8
           - amount: 1
             chance: 0.25
+      - id: 105004
+        name: カゼヤマのワッペンの設計図
+        category: Badge
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102004
+        name: タクティカルグローブの設計図
+        category: Gloves
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105007
         name: ローレライバッジの設計図
         category: Badge
@@ -3329,6 +5328,60 @@ stages:
         expected: 11
         slots:
           - amount: 11
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 103004
+        name: 戦闘用ブーツの設計図
+        category: Shoes
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 103005
+        name: ヒールパンプスの設計図
+        category: Shoes
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 106007
         name: リーフヘアピンの設計図
         category: Hairpin
@@ -3382,6 +5435,60 @@ stages:
           - amount: 8
           - amount: 1
             chance: 0.25
+      - id: 104004
+        name: 戦闘用ランドセルの設計図
+        category: Bag
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103004
+        name: 戦闘用ブーツの設計図
+        category: Shoes
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104005
+        name: デビルウイングのトートバッグの設計図
+        category: Bag
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103005
+        name: ヒールパンプスの設計図
+        category: Shoes
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104007
         name: 蝶柄のショルダーバッグの設計図
         category: Bag
@@ -3435,6 +5542,60 @@ stages:
           - amount: 8
           - amount: 1
             chance: 0.25
+      - id: 105004
+        name: カゼヤマのワッペンの設計図
+        category: Badge
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 102004
+        name: タクティカルグローブの設計図
+        category: Gloves
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105007
         name: ローレライバッジの設計図
         category: Badge
@@ -3488,6 +5649,60 @@ stages:
           - amount: 8
           - amount: 1
             chance: 0.25
+      - id: 107004
+        name: カモフラダルマの設計図
+        category: Charm
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109004
+        name: ドッグタグの設計図
+        category: Necklace
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107005
+        name: 呪いの人形の設計図
+        category: Charm
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109005
+        name: パンクチョーカーの設計図
+        category: Necklace
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107007
         name: ドリームキャッチャーの設計図
         category: Charm
@@ -3541,6 +5756,60 @@ stages:
           - amount: 8
           - amount: 1
             chance: 0.25
+      - id: 107004
+        name: カモフラダルマの設計図
+        category: Charm
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107005
+        name: 呪いの人形の設計図
+        category: Charm
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107007
         name: ドリームキャッチャーの設計図
         category: Charm
@@ -3594,6 +5863,60 @@ stages:
           - amount: 8
           - amount: 1
             chance: 0.25
+      - id: 104004
+        name: 戦闘用ランドセルの設計図
+        category: Bag
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109004
+        name: ドッグタグの設計図
+        category: Necklace
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104005
+        name: デビルウイングのトートバッグの設計図
+        category: Bag
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109005
+        name: パンクチョーカーの設計図
+        category: Necklace
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104007
         name: 蝶柄のショルダーバッグの設計図
         category: Bag
@@ -3647,6 +5970,60 @@ stages:
         expected: 11
         slots:
           - amount: 11
+      - id: 105004
+        name: カゼヤマのワッペンの設計図
+        category: Badge
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107004
+        name: カモフラダルマの設計図
+        category: Charm
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 107005
+        name: 呪いの人形の設計図
+        category: Charm
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 105007
         name: ローレライバッジの設計図
         category: Badge
@@ -3700,6 +6077,60 @@ stages:
         expected: 11
         slots:
           - amount: 11
+      - id: 104004
+        name: 戦闘用ランドセルの設計図
+        category: Bag
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 109004
+        name: ドッグタグの設計図
+        category: Necklace
+        tier: 5
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 104005
+        name: デビルウイングのトートバッグの設計図
+        category: Bag
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 109005
+        name: パンクチョーカーの設計図
+        category: Necklace
+        tier: 6
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 104007
         name: 蝶柄のショルダーバッグの設計図
         category: Bag
@@ -3753,6 +6184,60 @@ stages:
           - amount: 9
           - amount: 1
             chance: 0.75
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103005
+        name: ヒールパンプスの設計図
+        category: Shoes
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103006
+        name: カジュアルスニーカーの設計図
+        category: Shoes
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 102008
         name: セーリンググローブの設計図
         category: Gloves
@@ -3806,6 +6291,60 @@ stages:
           - amount: 9
           - amount: 1
             chance: 0.75
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105008
         name: ハルピュイア・フレキシブルバッジの設計図
         category: Badge
@@ -3859,6 +6398,60 @@ stages:
         expected: 13
         slots:
           - amount: 13
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 103005
+        name: ヒールパンプスの設計図
+        category: Shoes
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 103006
+        name: カジュアルスニーカーの設計図
+        category: Shoes
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 106008
         name: アンカーヘアピンの設計図
         category: Hairpin
@@ -3912,6 +6505,60 @@ stages:
         expected: 13
         slots:
           - amount: 13
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104005
+        name: デビルウイングのトートバッグの設計図
+        category: Bag
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 104006
+        name: ストリートバッグの設計図
+        category: Bag
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 105008
         name: ハルピュイア・フレキシブルバッジの設計図
         category: Badge
@@ -3965,6 +6612,60 @@ stages:
           - amount: 9
           - amount: 1
             chance: 0.75
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105008
         name: ハルピュイア・フレキシブルバッジの設計図
         category: Badge
@@ -4018,6 +6719,60 @@ stages:
           - amount: 9
           - amount: 1
             chance: 0.75
+      - id: 107005
+        name: 呪いの人形の設計図
+        category: Charm
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109005
+        name: パンクチョーカーの設計図
+        category: Necklace
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107006
+        name: ポケット消臭剤の設計図
+        category: Charm
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109006
+        name: チェーンネックレスの設計図
+        category: Necklace
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107008
         name: サメの歯のお守りの設計図
         category: Charm
@@ -4071,6 +6826,60 @@ stages:
           - amount: 9
           - amount: 1
             chance: 0.75
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103005
+        name: ヒールパンプスの設計図
+        category: Shoes
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103006
+        name: カジュアルスニーカーの設計図
+        category: Shoes
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 106008
         name: アンカーヘアピンの設計図
         category: Hairpin
@@ -4124,6 +6933,60 @@ stages:
           - amount: 9
           - amount: 1
             chance: 0.75
+      - id: 104005
+        name: デビルウイングのトートバッグの設計図
+        category: Bag
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 107005
+        name: 呪いの人形の設計図
+        category: Charm
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104006
+        name: ストリートバッグの設計図
+        category: Bag
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 107006
+        name: ポケット消臭剤の設計図
+        category: Charm
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104008
         name: スリングドライバックの設計図
         category: Bag
@@ -4177,6 +7040,60 @@ stages:
         expected: 13
         slots:
           - amount: 13
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 105008
         name: ハルピュイア・フレキシブルバッジの設計図
         category: Badge
@@ -4230,6 +7147,60 @@ stages:
         expected: 13
         slots:
           - amount: 13
+      - id: 104005
+        name: デビルウイングのトートバッグの設計図
+        category: Bag
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 109005
+        name: パンクチョーカーの設計図
+        category: Necklace
+        tier: 6
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 104006
+        name: ストリートバッグの設計図
+        category: Bag
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 109006
+        name: チェーンネックレスの設計図
+        category: Necklace
+        tier: 7
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 104008
         name: スリングドライバックの設計図
         category: Bag
@@ -4283,6 +7254,60 @@ stages:
           - amount: 11
           - amount: 1
             chance: 0.25
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103006
+        name: カジュアルスニーカーの設計図
+        category: Shoes
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102007
+        name: パールヤーングローブの設計図
+        category: Gloves
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101007
+        name: リーフリボン付き中折れ帽の設計図
+        category: Hat
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103007
+        name: 防水登山ブーツの設計図
+        category: Shoes
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 102009
         name: スーパーグローブの設計図
         category: Gloves
@@ -4336,6 +7361,60 @@ stages:
           - amount: 11
           - amount: 1
             chance: 0.25
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105007
+        name: ローレライバッジの設計図
+        category: Badge
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 102007
+        name: パールヤーングローブの設計図
+        category: Gloves
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 101007
+        name: リーフリボン付き中折れ帽の設計図
+        category: Hat
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105009
         name: コインバッジの設計図
         category: Badge
@@ -4389,6 +7468,60 @@ stages:
         expected: 15
         slots:
           - amount: 15
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 103006
+        name: カジュアルスニーカーの設計図
+        category: Shoes
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 106007
+        name: リーフヘアピンの設計図
+        category: Hairpin
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101007
+        name: リーフリボン付き中折れ帽の設計図
+        category: Hat
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 103007
+        name: 防水登山ブーツの設計図
+        category: Shoes
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 106009
         name: 電磁波カットヘアピンの設計図
         category: Hairpin
@@ -4442,6 +7575,60 @@ stages:
         expected: 15
         slots:
           - amount: 15
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104006
+        name: ストリートバッグの設計図
+        category: Bag
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 105007
+        name: ローレライバッジの設計図
+        category: Badge
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 104007
+        name: 蝶柄のショルダーバッグの設計図
+        category: Bag
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106007
+        name: リーフヘアピンの設計図
+        category: Hairpin
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 105009
         name: コインバッジの設計図
         category: Badge
@@ -4495,6 +7682,60 @@ stages:
           - amount: 11
           - amount: 1
             chance: 0.25
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 105007
+        name: ローレライバッジの設計図
+        category: Badge
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 102007
+        name: パールヤーングローブの設計図
+        category: Gloves
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 101007
+        name: リーフリボン付き中折れ帽の設計図
+        category: Hat
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 105009
         name: コインバッジの設計図
         category: Badge
@@ -4548,6 +7789,60 @@ stages:
           - amount: 11
           - amount: 1
             chance: 0.25
+      - id: 107006
+        name: ポケット消臭剤の設計図
+        category: Charm
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 109006
+        name: チェーンネックレスの設計図
+        category: Necklace
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 107007
+        name: ドリームキャッチャーの設計図
+        category: Charm
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 109007
+        name: グリーンリーフネックレスの設計図
+        category: Necklace
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108007
+        name: ローレライの腕時計の設計図
+        category: Watch
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 107009
         name: キーキャップトイの設計図
         category: Charm
@@ -4601,6 +7896,60 @@ stages:
           - amount: 11
           - amount: 1
             chance: 0.25
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 103006
+        name: カジュアルスニーカーの設計図
+        category: Shoes
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106007
+        name: リーフヘアピンの設計図
+        category: Hairpin
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 103007
+        name: 防水登山ブーツの設計図
+        category: Shoes
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108007
+        name: ローレライの腕時計の設計図
+        category: Watch
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 106009
         name: 電磁波カットヘアピンの設計図
         category: Hairpin
@@ -4654,6 +8003,60 @@ stages:
           - amount: 11
           - amount: 1
             chance: 0.25
+      - id: 104006
+        name: ストリートバッグの設計図
+        category: Bag
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 107006
+        name: ポケット消臭剤の設計図
+        category: Charm
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 104007
+        name: 蝶柄のショルダーバッグの設計図
+        category: Bag
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
+      - id: 107007
+        name: ドリームキャッチャーの設計図
+        category: Charm
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108007
+        name: ローレライの腕時計の設計図
+        category: Watch
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
       - id: 104009
         name: メタルケースの設計図
         category: Bag
@@ -4707,6 +8110,60 @@ stages:
         expected: 15
         slots:
           - amount: 15
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 105007
+        name: ローレライバッジの設計図
+        category: Badge
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 102007
+        name: パールヤーングローブの設計図
+        category: Gloves
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 108007
+        name: ローレライの腕時計の設計図
+        category: Watch
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 105009
         name: コインバッジの設計図
         category: Badge
@@ -4760,6 +8217,60 @@ stages:
         expected: 15
         slots:
           - amount: 15
+      - id: 104006
+        name: ストリートバッグの設計図
+        category: Bag
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.075
+        slots:
+          - amount: 1
+            chance: 0.074993
+            source: gacha
+      - id: 109006
+        name: チェーンネックレスの設計図
+        category: Necklace
+        tier: 7
+        expected: 0.1
+        slots:
+          - amount: 1
+            chance: 0.09999
+            source: gacha
+      - id: 104007
+        name: 蝶柄のショルダーバッグの設計図
+        category: Bag
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 106007
+        name: リーフヘアピンの設計図
+        category: Hairpin
+        tier: 8
+        expected: 0.15
+        slots:
+          - amount: 1
+            chance: 0.150007
+            source: gacha
+      - id: 109007
+        name: グリーンリーフネックレスの設計図
+        category: Necklace
+        tier: 8
+        expected: 0.2
+        slots:
+          - amount: 1
+            chance: 0.20001
+            source: gacha
       - id: 104009
         name: メタルケースの設計図
         category: Bag

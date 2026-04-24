@@ -17,6 +17,7 @@ function loadJson(name) {
 
 const stages = loadJson('stages');
 const equipment = loadJson('equipment');
+const groups = loadJson('groups');
 
 // 装備 ID が「Tier1 完成品（4桁）= 計算対象外」か判定する。
 // 実データ上、完成品 Tier1 の ID は 1000/2000/3000/5000/6000/8000 のような 4桁。
@@ -25,17 +26,51 @@ function isDraft(equipId) {
   return equipId >= 100000;
 }
 
+// 1 つの reward エントリを「装備設計図への寄与」のリストに展開する。
+// GachaGroup は groups.json で内部抽選テーブルを引いて子装備に分解する。
+// 例: GachaGroup 609007 (Chance 0.3) → Necklace T7 (子 Chance 0.3333) と T8 (0.6667) に分配。
+function expandReward(r) {
+  if (r.Type === 'Equipment') {
+    return [{ equipId: r.Id, amount: r.Amount ?? 1, chance: r.Chance, source: 'equipment' }];
+  }
+  if (r.Type === 'GachaGroup') {
+    const group = groups[String(r.Id)];
+    if (!group?.Items) return [];
+    const parentChance = r.Chance ?? 1;
+    const parentAmount = r.Amount ?? 1;
+    const out = [];
+    for (const it of group.Items) {
+      if (it.Type !== 'Equipment') continue;
+      const childChance = it.Chance ?? 0;       // groups 側が Chance 省略なら期待値ゼロで除外される側に倒す
+      const aMin = it.AmountMin ?? 1;
+      const aMax = it.AmountMax ?? aMin;
+      const childAmount = (aMin + aMax) / 2;
+      out.push({
+        equipId: it.Id,
+        amount: parentAmount * childAmount,
+        chance: parentChance * childChance,
+        source: 'gacha',
+      });
+    }
+    return out;
+  }
+  return [];
+}
+
 // スロット配列から、同一 Id をまとめて期待値と内訳を返す。
 function aggregateDrops(rewards) {
   const byId = new Map();
   for (const r of rewards) {
-    if (r.RewardType) continue;          // FirstClear / ThreeStar はスキップ
-    if (r.Type !== 'Equipment') continue; // Currency / GachaGroup は除外
-    if (!isDraft(r.Id)) continue;         // Tier1 完成品はスキップ
-    if (!byId.has(r.Id)) byId.set(r.Id, []);
-    const slot = { amount: r.Amount ?? 1 };
-    if (r.Chance !== undefined) slot.chance = r.Chance;
-    byId.get(r.Id).push(slot);
+    if (r.RewardType) continue;            // FirstClear / ThreeStar はスキップ
+    for (const ex of expandReward(r)) {
+      if (!isDraft(ex.equipId)) continue;  // Tier1 完成品はスキップ
+      if (ex.chance === 0) continue;       // 期待値ゼロ (例: groups 内の "0" 重み) は除外
+      if (!byId.has(ex.equipId)) byId.set(ex.equipId, []);
+      const slot = { amount: ex.amount };
+      if (ex.chance !== undefined && ex.chance !== 1) slot.chance = Number(ex.chance.toFixed(6));
+      if (ex.source === 'gacha') slot.source = 'gacha';
+      byId.get(ex.equipId).push(slot);
+    }
   }
   const drops = [];
   for (const [id, slots] of byId) {
@@ -86,14 +121,15 @@ const output = {
     'Difficulty === 1 (Hard)',
     'Area % 3 === 0 (challenge areas without equipment drops)',
     'Tier1 完成品装備（4桁ID）',
-    'Currency / GachaGroup',
+    'Currency / 装備以外の GachaGroup (500100 など)',
     'RewardType === "FirstClear" | "ThreeStar"',
     '設計図が1種もドロップしないステージ',
   ],
   notes: {
     label: '"任務{Area}-{Stage}" 形式。Area は元の番号のまま（3の倍数を飛ばすが詰めない）。',
     expected: 'Σ(slot.amount × (slot.chance ?? 1))。スロット同士は独立抽選のため単純合算。',
-    slots: '未指定 chance は確定ドロップ（= 1.0）として期待値計算。',
+    slots: '未指定 chance は確定ドロップ（= 1.0）として期待値計算。source: "gacha" は GachaGroup 由来のサブドロップ。',
+    gacha_group: 'GachaGroup は groups.json の内部抽選テーブルで子装備に展開し、親chance × 子chance × 個数 で期待値加算。',
   },
   total_stages: built.length,
   stages: built,

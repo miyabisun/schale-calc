@@ -32,12 +32,15 @@ const fmt = (v, n = 1) => {
 const signed = (v) => (v > 0 ? '+' : '') + fmt(v);
 
 // そのステージで何 Tier の何カテゴリを狙うかの略称
+// GachaGroup 由来の T-2/-3 サブドロップは周知なので主な目当てから除外する。
 function targetLabel(stageLabel) {
   const s = stageByLabel.get(stageLabel);
   if (!s) return '';
   const byTier = {};
   for (const d of s.drops) {
     if (d.tier === 0) continue;
+    const hasMainDrop = d.slots.some((sl) => sl.source !== 'gacha');
+    if (!hasMainDrop) continue;
     (byTier[d.tier] ??= new Set()).add(d.category);
   }
   return Object.entries(byTier)
@@ -72,6 +75,34 @@ for (const p of PLAN.plan) {
 P(`| **合計** | **${PLAN.summary.total_clears.toLocaleString()}** | **${PLAN.summary.total_ap.toLocaleString()}** | |`);
 P();
 
+P(`## 在庫目安`);
+P();
+P(`> アイテム欄でこの数だけ確保できれば育成完了。装備設計図は不足時に同カテゴリの万能設計図で自動補填される (Tier ごとの交換レートは [equipment-upgrade.md](./equipment-upgrade.md) 参照)。`);
+P();
+const STOCK_TIERS = [`T${PLAN.target_tier - 1}`, `T${PLAN.target_tier}`];
+P(`### 装備設計図 (${STOCK_TIERS.join('・')})`);
+P();
+P(`> 下位 Tier は ${STOCK_TIERS.join('・')} の周回時サブドロップと万能設計図補填で揃うため省略。`);
+P();
+P(`| カテゴリ | Tier | 必要数 |`);
+P(`|:---|:---|---:|`);
+for (const f of PLAN.fulfillment) {
+  for (const tk of STOCK_TIERS) {
+    const t = f.tiers[tk];
+    if (!t) continue;
+    P(`| ${ja(f.category)} | ${tk} | ${t.required.toLocaleString()} |`);
+  }
+}
+P();
+P(`### 万能設計図 (カテゴリ別)`);
+P();
+P(`| カテゴリ | 必要数 |`);
+P(`|:---|---:|`);
+for (const w of PLAN.wildcard_ledger) {
+  P(`| ${ja(w.category)} | ${w.consumed.toLocaleString()} |`);
+}
+P();
+
 P(`## 過不足`);
 P();
 P(`### カテゴリ別`);
@@ -84,20 +115,25 @@ for (const f of PLAN.fulfillment) {
 P();
 
 // 余剰 1 以上の (category, tier) のみ（端数はノイズとして省略）
+// 並び順は黄金比 (preset.demand 定義順) → Tier 昇順 で在庫目安と揃える。
+const catOrder = new Map(PLAN.fulfillment.map((f, i) => [f.category, i]));
 const surplusRows = [];
 for (const f of PLAN.fulfillment) {
   for (const [tk, t] of Object.entries(f.tiers)) {
     if (t.surplus >= 1) surplusRows.push({ category: f.category, tier: tk, ...t });
   }
 }
-surplusRows.sort((a, b) => b.surplus - a.surplus);
+surplusRows.sort((a, b) =>
+  catOrder.get(a.category) - catOrder.get(b.category) ||
+  +a.tier.slice(1) - +b.tier.slice(1)
+);
 
-P(`### 装備別の余り (+1 以上)`);
+P(`### Tier 別の余り (+1 以上)`);
 P();
-P(`| 装備 | 必要 | 獲得 | 余剰 |`);
-P(`|:---|---:|---:|---:|`);
+P(`| カテゴリ | Tier | 必要 | 獲得 | 余剰 |`);
+P(`|:---|:---|---:|---:|---:|`);
 for (const s of surplusRows) {
-  P(`| ${ja(s.category)} ${s.tier} | ${s.required} | ${fmt(s.obtained)} | ${signed(s.surplus)} |`);
+  P(`| ${ja(s.category)} | ${s.tier} | ${s.required} | ${fmt(s.obtained)} | ${signed(s.surplus)} |`);
 }
 P();
 
