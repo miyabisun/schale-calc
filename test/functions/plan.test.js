@@ -41,6 +41,26 @@ test('buildLpModel: 制約と変数が demand × tier 数だけ生成される',
   assert.equal(model.variables.x_0.demand_Hat_T2, 2);
 });
 
+test('buildLpModel: y 変数に退化解よけの totalClears ペナルティが rate 比例で入る', () => {
+  // y が目的関数に効かないと LP が退化 (Σx 同値の解空間で任意の y を選ぶ) する。
+  // y_cat_tier.totalClears = ε × rate[tk] で、1次目的 (整数周回) を歪めずに 2 次目的
+  // (万能消費最小) を入れる近似 lexicographic 最適化。
+  const stages = [{ label: 'S1', drops: [] }];
+  const required = { Hat: { T2: 0, T3: 0, T4: 0 } };
+  const model = buildLpModel({
+    stages, required, rate: RATE, tierKeys: TIER_KEYS,
+    multiplier: 1, demand: { Hat: 1 },
+  });
+  const p2 = model.variables.y_Hat_T2.totalClears;
+  const p3 = model.variables.y_Hat_T3.totalClears;
+  const p4 = model.variables.y_Hat_T4.totalClears;
+  // 1次目的 (整数1刻み) を歪めない程度に小さい
+  assert.ok(p2 > 0 && p2 < 1e-3, `小さい正値のはず: ${p2}`);
+  // rate に比例 (T3 の係数は T2 の rate比だけ大きい)
+  assert.equal(p3 / p2, RATE.T3 / RATE.T2);
+  assert.equal(p4 / p2, RATE.T4 / RATE.T2);
+});
+
 test('buildLpModel: 万能設計図 (Tier 0) のドロップは wildcard 制約に入る', () => {
   const stages = [
     { label: 'S1', drops: [{ category: 'Hat', tier: 0, expected: 5 }] },

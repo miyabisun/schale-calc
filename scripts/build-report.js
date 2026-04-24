@@ -47,29 +47,37 @@ P();
 
 P(`## 在庫目安`);
 P();
-P(`> アイテム欄でこの数だけ確保できれば育成完了。装備設計図は不足時に同カテゴリの万能設計図で自動補填される (Tier ごとの交換レートは [equipment-upgrade.md](./equipment-upgrade.md) 参照)。`);
+P(`> この周回プランを消化すると、以下の期待値でアイテムがアイテム欄に積み上がる。昇格時は装備設計図が優先消費され、不足分は同カテゴリの万能設計図から自動補填される (Tier ごとの交換レートは [equipment-upgrade.md](./equipment-upgrade.md) 参照)。`);
 P();
-const STOCK_TIERS = [`T${PLAN.target_tier - 1}`, `T${PLAN.target_tier}`];
-P(`### 装備設計図 (${STOCK_TIERS.join('・')})`);
+
+// 装備設計図: 各カテゴリの drop_expected を Tier で横並び
+// 表示は整数 (Math.round) なので、四捨五入で 1 個以上になる Tier だけ列に出す。
+// ゼロ表示のセルは '—' にして「この組み合わせはドロップしない」が一目で分かるように。
+const cellStr = (drop) => {
+  const n = Math.round(drop ?? 0);
+  return n === 0 ? '—' : n.toLocaleString();
+};
+const DROP_TIERS = Object.keys(PLAN.fulfillment[0].tiers)
+  .filter((tk) => PLAN.fulfillment.some((f) => Math.round(f.tiers[tk]?.drop_expected ?? 0) >= 1));
+
+P(`### 装備設計図 (周回ドロップ期待値)`);
 P();
-P(`> 下位 Tier は ${STOCK_TIERS.join('・')} の周回時サブドロップと万能設計図補填で揃うため省略。`);
-P();
-P(`| カテゴリ | Tier | 必要数 |`);
-P(`|:---|:---|---:|`);
+P(`| カテゴリ | ${DROP_TIERS.join(' | ')} |`);
+P(`|:---|${DROP_TIERS.map(() => '---:').join('|')}|`);
 for (const f of PLAN.fulfillment) {
-  for (const tk of STOCK_TIERS) {
-    const t = f.tiers[tk];
-    if (!t) continue;
-    P(`| ${categoryJa(f.category)} | ${tk} | ${t.required.toLocaleString()} |`);
-  }
+  const cells = DROP_TIERS.map((tk) => cellStr(f.tiers[tk]?.drop_expected));
+  P(`| ${categoryJa(f.category)} | ${cells.join(' | ')} |`);
 }
 P();
-P(`### 万能設計図 (カテゴリ別)`);
+P(`> 記載のない下位 Tier (T2〜) は直接ドロップせず、昇格時に万能設計図から直接引き落とされる。`);
 P();
-P(`| カテゴリ | 必要数 |`);
+
+P(`### 万能設計図 (周回ドロップ期待値)`);
+P();
+P(`| カテゴリ | 入手 |`);
 P(`|:---|---:|`);
 for (const w of PLAN.wildcard_ledger) {
-  P(`| ${categoryJa(w.category)} | ${w.consumed.toLocaleString()} |`);
+  P(`| ${categoryJa(w.category)} | ${Math.round(w.supply).toLocaleString()} |`);
 }
 P();
 

@@ -19,7 +19,11 @@ function requiredMaterials(demand, cumulative, tierKeys) {
 // 制約:
 //   demand_<cat>_<tier> : ドロップ期待値 + 変換 ≥ required[cat][tier]
 //   wildcard_<cat>      : 万能設計図の供給 - 消費 ≥ 0
-// 目的: Σ x_i 最小化
+// 目的: Σ x_i + ε × Σ(y × rate) 最小化
+//   ε は退化解よけ。周回数が同値の解空間で万能消費最小を選ばせる (y が目的関数に効かないと
+//   solver が余剰万能を任意の y に突っ込む → お守りT3=227個のような擬似overproduction が出る)。
+//   1e-6: 総万能消費 ≈ 90,000 × 1e-6 ≈ 0.09 で、1次側の整数周回 (1刻み) より十分小さい。
+const Y_PENALTY = 1e-6;
 function buildLpModel({ stages, required, rate, tierKeys, multiplier, demand }) {
   const model = { optimize: 'totalClears', opType: 'min', constraints: {}, variables: {} };
 
@@ -46,6 +50,7 @@ function buildLpModel({ stages, required, rate, tierKeys, multiplier, demand }) 
   for (const cat of Object.keys(demand)) {
     for (const tk of tierKeys) {
       model.variables[`y_${cat}_${tk}`] = {
+        totalClears: Y_PENALTY * rate[tk],
         [`demand_${cat}_${tk}`]: 1,
         [`wildcard_${cat}`]: -rate[tk],
       };
