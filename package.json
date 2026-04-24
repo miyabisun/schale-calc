@@ -1,0 +1,29 @@
+{
+  "name": "schale-calc",
+  "version": "1.0.0",
+  "description": "BlueArchive の任務（Campaign）周回効率を計算するためのデータ整形ツール",
+  "main": "index.js",
+  "scripts": {
+    "fetch": "node scripts/fetch.js",
+    "build:normal": "node scripts/build-normal-rewards.js",
+    "build": "npm run fetch && npm run build:normal",
+    "verify:upgrade": "node scripts/verify-upgrade-table.js",
+    "plan": "node scripts/plan-grind.js && node scripts/build-report.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miyabisun/schale-calc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/miyabisun/schale-calc/issues"
+  },
+  "homepage": "https://github.com/miyabisun/schale-calc#readme",
+  "dependencies": {
+    "javascript-lp-solver": "^1.0.3",
+    "js-yaml": "^4.1.1"
+  }
+}

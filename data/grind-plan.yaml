@@ -1,0 +1,740 @@
+generated_at: "2026-04-24T14:35:22.116Z"
+preset: oniea_golden_ratio
+description: オニア先生が提唱する月次在庫指針の黄金比（2026-04 時点）
+target_tier: 10
+demand:
+  Hat: 3
+  Gloves: 2
+  Shoes: 4
+  Bag: 2
+  Badge: 2
+  Hairpin: 4
+  Charm: 1
+  Watch: 4
+  Necklace: 2
+multiplier: 2
+summary:
+  total_clears: 1405
+  total_ap: 14050
+plan:
+  - stage: 任務23-3
+    area: 23
+    stage_num: 3
+    clears: 74
+    lp_continuous: 73.773
+  - stage: 任務25-3
+    area: 25
+    stage_num: 3
+    clears: 220
+    lp_continuous: 219.444
+  - stage: 任務26-1
+    area: 26
+    stage_num: 1
+    clears: 16
+    lp_continuous: 15.952
+  - stage: 任務26-2
+    area: 26
+    stage_num: 2
+    clears: 14
+    lp_continuous: 13.359
+  - stage: 任務26-3
+    area: 26
+    stage_num: 3
+    clears: 12
+    lp_continuous: 11.657
+  - stage: 任務26-4
+    area: 26
+    stage_num: 4
+    clears: 147
+    lp_continuous: 146.296
+  - stage: 任務26-5
+    area: 26
+    stage_num: 5
+    clears: 56
+    lp_continuous: 55.336
+  - stage: 任務28-1
+    area: 28
+    stage_num: 1
+    clears: 5
+    lp_continuous: 3.488
+  - stage: 任務28-3
+    area: 28
+    stage_num: 3
+    clears: 347
+    lp_continuous: 344.186
+  - stage: 任務28-5
+    area: 28
+    stage_num: 5
+    clears: 1
+    lp_continuous: 0
+  - stage: 任務29-1
+    area: 29
+    stage_num: 1
+    clears: 72
+    lp_continuous: 71.318
+  - stage: 任務29-3
+    area: 29
+    stage_num: 3
+    clears: 86
+    lp_continuous: 83.721
+  - stage: 任務29-4
+    area: 29
+    stage_num: 4
+    clears: 233
+    lp_continuous: 232.558
+  - stage: 任務29-5
+    area: 29
+    stage_num: 5
+    clears: 122
+    lp_continuous: 120.93
+fulfillment:
+  - category: Hat
+    total_required: 1470
+    total_obtained: 1473.53
+    total_surplus: 3.53
+    tiers:
+      T2:
+        required: 120
+        drop_expected: 0
+        wildcard_converted: 120
+        obtained: 120
+        surplus: 0
+      T3:
+        required: 135
+        drop_expected: 0
+        wildcard_converted: 135
+        obtained: 135
+        surplus: 0
+      T4:
+        required: 150
+        drop_expected: 0
+        wildcard_converted: 150
+        obtained: 150
+        surplus: 0
+      T5:
+        required: 165
+        drop_expected: 0
+        wildcard_converted: 165
+        obtained: 165
+        surplus: 0
+      T6:
+        required: 195
+        drop_expected: 0
+        wildcard_converted: 195
+        obtained: 195
+        surplus: 0
+      T7:
+        required: 195
+        drop_expected: 0
+        wildcard_converted: 195
+        obtained: 195
+        surplus: 0
+      T8:
+        required: 180
+        drop_expected: 0
+        wildcard_converted: 180
+        obtained: 180
+        surplus: 0
+      T9:
+        required: 150
+        drop_expected: 113.52
+        wildcard_converted: 37
+        obtained: 150.52
+        surplus: 0.52
+      T10:
+        required: 180
+        drop_expected: 183.01
+        wildcard_converted: 0
+        obtained: 183.01
+        surplus: 3.01
+  - category: Gloves
+    total_required: 980
+    total_obtained: 988.17
+    total_surplus: 8.17
+    tiers:
+      T2:
+        required: 80
+        drop_expected: 0
+        wildcard_converted: 80
+        obtained: 80
+        surplus: 0
+      T3:
+        required: 90
+        drop_expected: 0
+        wildcard_converted: 90
+        obtained: 90
+        surplus: 0
+      T4:
+        required: 100
+        drop_expected: 0
+        wildcard_converted: 100
+        obtained: 100
+        surplus: 0
+      T5:
+        required: 110
+        drop_expected: 0
+        wildcard_converted: 110
+        obtained: 110
+        surplus: 0
+      T6:
+        required: 130
+        drop_expected: 0
+        wildcard_converted: 130
+        obtained: 130
+        surplus: 0
+      T7:
+        required: 130
+        drop_expected: 0
+        wildcard_converted: 130
+        obtained: 130
+        surplus: 0
+      T8:
+        required: 120
+        drop_expected: 0
+        wildcard_converted: 124
+        obtained: 124
+        surplus: 4
+      T9:
+        required: 100
+        drop_expected: 75.85
+        wildcard_converted: 25
+        obtained: 100.85
+        surplus: 0.85
+      T10:
+        required: 120
+        drop_expected: 123.32
+        wildcard_converted: 0
+        obtained: 123.32
+        surplus: 3.32
+  - category: Shoes
+    total_required: 1960
+    total_obtained: 1998.9
+    total_surplus: 38.9
+    tiers:
+      T2:
+        required: 160
+        drop_expected: 0
+        wildcard_converted: 160
+        obtained: 160
+        surplus: 0
+      T3:
+        required: 180
+        drop_expected: 0
+        wildcard_converted: 180
+        obtained: 180
+        surplus: 0
+      T4:
+        required: 200
+        drop_expected: 0
+        wildcard_converted: 200
+        obtained: 200
+        surplus: 0
+      T5:
+        required: 220
+        drop_expected: 0
+        wildcard_converted: 220
+        obtained: 220
+        surplus: 0
+      T6:
+        required: 260
+        drop_expected: 0
+        wildcard_converted: 294
+        obtained: 294
+        surplus: 34
+      T7:
+        required: 260
+        drop_expected: 0
+        wildcard_converted: 260
+        obtained: 260
+        surplus: 0
+      T8:
+        required: 240
+        drop_expected: 0
+        wildcard_converted: 240
+        obtained: 240
+        surplus: 0
+      T9:
+        required: 200
+        drop_expected: 158.58
+        wildcard_converted: 43
+        obtained: 201.58
+        surplus: 1.58
+      T10:
+        required: 240
+        drop_expected: 241.32
+        wildcard_converted: 2
+        obtained: 243.32
+        surplus: 3.32
+  - category: Bag
+    total_required: 980
+    total_obtained: 984.18
+    total_surplus: 4.18
+    tiers:
+      T2:
+        required: 80
+        drop_expected: 0
+        wildcard_converted: 80
+        obtained: 80
+        surplus: 0
+      T3:
+        required: 90
+        drop_expected: 0
+        wildcard_converted: 90
+        obtained: 90
+        surplus: 0
+      T4:
+        required: 100
+        drop_expected: 0
+        wildcard_converted: 100
+        obtained: 100
+        surplus: 0
+      T5:
+        required: 110
+        drop_expected: 0
+        wildcard_converted: 110
+        obtained: 110
+        surplus: 0
+      T6:
+        required: 130
+        drop_expected: 0
+        wildcard_converted: 130
+        obtained: 130
+        surplus: 0
+      T7:
+        required: 130
+        drop_expected: 0
+        wildcard_converted: 130
+        obtained: 130
+        surplus: 0
+      T8:
+        required: 120
+        drop_expected: 50.91
+        wildcard_converted: 70
+        obtained: 120.91
+        surplus: 0.91
+      T9:
+        required: 100
+        drop_expected: 37.15
+        wildcard_converted: 64
+        obtained: 101.15
+        surplus: 1.15
+      T10:
+        required: 120
+        drop_expected: 122.12
+        wildcard_converted: 0
+        obtained: 122.12
+        surplus: 2.12
+  - category: Badge
+    total_required: 980
+    total_obtained: 981.77
+    total_surplus: 1.77
+    tiers:
+      T2:
+        required: 80
+        drop_expected: 0
+        wildcard_converted: 80
+        obtained: 80
+        surplus: 0
+      T3:
+        required: 90
+        drop_expected: 0
+        wildcard_converted: 90
+        obtained: 90
+        surplus: 0
+      T4:
+        required: 100
+        drop_expected: 0
+        wildcard_converted: 100
+        obtained: 100
+        surplus: 0
+      T5:
+        required: 110
+        drop_expected: 0
+        wildcard_converted: 110
+        obtained: 110
+        surplus: 0
+      T6:
+        required: 130
+        drop_expected: 0
+        wildcard_converted: 130
+        obtained: 130
+        surplus: 0
+      T7:
+        required: 130
+        drop_expected: 0
+        wildcard_converted: 130
+        obtained: 130
+        surplus: 0
+      T8:
+        required: 120
+        drop_expected: 0
+        wildcard_converted: 120
+        obtained: 120
+        surplus: 0
+      T9:
+        required: 100
+        drop_expected: 75.85
+        wildcard_converted: 25
+        obtained: 100.85
+        surplus: 0.85
+      T10:
+        required: 120
+        drop_expected: 120.92
+        wildcard_converted: 0
+        obtained: 120.92
+        surplus: 0.92
+  - category: Hairpin
+    total_required: 1960
+    total_obtained: 1964.05
+    total_surplus: 4.05
+    tiers:
+      T2:
+        required: 160
+        drop_expected: 0
+        wildcard_converted: 160
+        obtained: 160
+        surplus: 0
+      T3:
+        required: 180
+        drop_expected: 0
+        wildcard_converted: 180
+        obtained: 180
+        surplus: 0
+      T4:
+        required: 200
+        drop_expected: 0
+        wildcard_converted: 200
+        obtained: 200
+        surplus: 0
+      T5:
+        required: 220
+        drop_expected: 0
+        wildcard_converted: 220
+        obtained: 220
+        surplus: 0
+      T6:
+        required: 260
+        drop_expected: 0
+        wildcard_converted: 260
+        obtained: 260
+        surplus: 0
+      T7:
+        required: 260
+        drop_expected: 0
+        wildcard_converted: 260
+        obtained: 260
+        surplus: 0
+      T8:
+        required: 240
+        drop_expected: 0
+        wildcard_converted: 240
+        obtained: 240
+        surplus: 0
+      T9:
+        required: 200
+        drop_expected: 152.05
+        wildcard_converted: 50
+        obtained: 202.05
+        surplus: 2.05
+      T10:
+        required: 240
+        drop_expected: 242
+        wildcard_converted: 0
+        obtained: 242
+        surplus: 2
+  - category: Charm
+    total_required: 490
+    total_obtained: 525.11
+    total_surplus: 35.11
+    tiers:
+      T2:
+        required: 40
+        drop_expected: 0
+        wildcard_converted: 40
+        obtained: 40
+        surplus: 0
+      T3:
+        required: 45
+        drop_expected: 0
+        wildcard_converted: 45
+        obtained: 45
+        surplus: 0
+      T4:
+        required: 50
+        drop_expected: 0
+        wildcard_converted: 50
+        obtained: 50
+        surplus: 0
+      T5:
+        required: 55
+        drop_expected: 0
+        wildcard_converted: 55
+        obtained: 55
+        surplus: 0
+      T6:
+        required: 65
+        drop_expected: 0
+        wildcard_converted: 65
+        obtained: 65
+        surplus: 0
+      T7:
+        required: 65
+        drop_expected: 0
+        wildcard_converted: 65
+        obtained: 65
+        surplus: 0
+      T8:
+        required: 60
+        drop_expected: 0
+        wildcard_converted: 60
+        obtained: 60
+        surplus: 0
+      T9:
+        required: 50
+        drop_expected: 17.2
+        wildcard_converted: 34
+        obtained: 51.2
+        surplus: 1.2
+      T10:
+        required: 60
+        drop_expected: 93.91
+        wildcard_converted: 0
+        obtained: 93.91
+        surplus: 33.91
+  - category: Watch
+    total_required: 1960
+    total_obtained: 1963.82
+    total_surplus: 3.82
+    tiers:
+      T2:
+        required: 160
+        drop_expected: 0
+        wildcard_converted: 160
+        obtained: 160
+        surplus: 0
+      T3:
+        required: 180
+        drop_expected: 0
+        wildcard_converted: 180
+        obtained: 180
+        surplus: 0
+      T4:
+        required: 200
+        drop_expected: 0
+        wildcard_converted: 200
+        obtained: 200
+        surplus: 0
+      T5:
+        required: 220
+        drop_expected: 0
+        wildcard_converted: 220
+        obtained: 220
+        surplus: 0
+      T6:
+        required: 260
+        drop_expected: 0
+        wildcard_converted: 260
+        obtained: 260
+        surplus: 0
+      T7:
+        required: 260
+        drop_expected: 0
+        wildcard_converted: 260
+        obtained: 260
+        surplus: 0
+      T8:
+        required: 240
+        drop_expected: 38.18
+        wildcard_converted: 202
+        obtained: 240.18
+        surplus: 0.18
+      T9:
+        required: 200
+        drop_expected: 122.81
+        wildcard_converted: 79
+        obtained: 201.81
+        surplus: 1.81
+      T10:
+        required: 240
+        drop_expected: 241.83
+        wildcard_converted: 0
+        obtained: 241.83
+        surplus: 1.83
+  - category: Necklace
+    total_required: 980
+    total_obtained: 982.05
+    total_surplus: 2.05
+    tiers:
+      T2:
+        required: 80
+        drop_expected: 0
+        wildcard_converted: 80
+        obtained: 80
+        surplus: 0
+      T3:
+        required: 90
+        drop_expected: 0
+        wildcard_converted: 90
+        obtained: 90
+        surplus: 0
+      T4:
+        required: 100
+        drop_expected: 0
+        wildcard_converted: 100
+        obtained: 100
+        surplus: 0
+      T5:
+        required: 110
+        drop_expected: 0
+        wildcard_converted: 110
+        obtained: 110
+        surplus: 0
+      T6:
+        required: 130
+        drop_expected: 0
+        wildcard_converted: 130
+        obtained: 130
+        surplus: 0
+      T7:
+        required: 130
+        drop_expected: 0
+        wildcard_converted: 130
+        obtained: 130
+        surplus: 0
+      T8:
+        required: 120
+        drop_expected: 38.18
+        wildcard_converted: 82
+        obtained: 120.18
+        surplus: 0.18
+      T9:
+        required: 100
+        drop_expected: 46.78
+        wildcard_converted: 54
+        obtained: 100.78
+        surplus: 0.78
+      T10:
+        required: 120
+        drop_expected: 121.09
+        wildcard_converted: 0
+        obtained: 121.09
+        surplus: 1.09
+wildcard_ledger:
+  - category: Hat
+    supply: 12270
+    consumed: 12135
+    surplus: 135
+    used_for:
+      T2: 120
+      T3: 135
+      T4: 150
+      T5: 165
+      T6: 195
+      T7: 195
+      T8: 180
+      T9: 37
+  - category: Gloves
+    supply: 8244
+    consumed: 8180
+    surplus: 64
+    used_for:
+      T2: 80
+      T3: 90
+      T4: 100
+      T5: 110
+      T6: 130
+      T7: 130
+      T8: 124
+      T9: 25
+  - category: Shoes
+    supply: 16515.5
+    consumed: 16430
+    surplus: 85.5
+    used_for:
+      T2: 160
+      T3: 180
+      T4: 200
+      T5: 220
+      T6: 294
+      T7: 260
+      T8: 240
+      T9: 43
+      T10: 2
+  - category: Bag
+    supply: 8357
+    consumed: 8270
+    surplus: 87
+    used_for:
+      T2: 80
+      T3: 90
+      T4: 100
+      T5: 110
+      T6: 130
+      T7: 130
+      T8: 70
+      T9: 64
+  - category: Badge
+    supply: 8139
+    consumed: 8100
+    surplus: 39
+    used_for:
+      T2: 80
+      T3: 90
+      T4: 100
+      T5: 110
+      T6: 130
+      T7: 130
+      T8: 120
+      T9: 25
+  - category: Hairpin
+    supply: 16298.5
+    consumed: 16200
+    surplus: 98.5
+    used_for:
+      T2: 160
+      T3: 180
+      T4: 200
+      T5: 220
+      T6: 260
+      T7: 260
+      T8: 240
+      T9: 50
+  - category: Charm
+    supply: 4745
+    consumed: 4695
+    surplus: 50
+    used_for:
+      T2: 40
+      T3: 45
+      T4: 50
+      T5: 55
+      T6: 65
+      T7: 65
+      T8: 60
+      T9: 34
+  - category: Watch
+    supply: 16407
+    consumed: 16310
+    surplus: 97
+    used_for:
+      T2: 160
+      T3: 180
+      T4: 200
+      T5: 220
+      T6: 260
+      T7: 260
+      T8: 202
+      T9: 79
+  - category: Necklace
+    supply: 8269
+    consumed: 8210
+    surplus: 59
+    used_for:
+      T2: 80
+      T3: 90
+      T4: 100
+      T5: 110
+      T6: 130
+      T7: 130
+      T8: 82
+      T9: 54

@@ -1,0 +1,126 @@
+# BlueArchive 装備 Tier アップ仕様
+# 出典: https://bluearchive.wikiru.jp/?%E8%A3%85%E5%82%99%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6
+# 取得日: 2026-04-24
+#
+# 各 step の意味:
+#   materials       : その昇格に必要な各 Tier 設計図（または完成品）の個数
+#   tier_credits    : Tier を上げる操作そのものに必要なクレジット
+#   level_credits   : 昇格後、このステップの max_level まで上げるための LvUP クレジット
+#                    （前ステップの max_level から連続で上げた場合の差分）
+#   max_level       : 昇格直後に到達可能な最大レベル
+
+tier_upgrade:
+  - step: T1            # 完成品を生徒に装着して使えるようにする段階
+    to_tier: 1
+    materials: { T1: 1 }
+    tier_credits: 0
+    level_credits: 1524
+    max_level: 10
+
+  - step: T1_to_T2
+    to_tier: 2
+    materials: { T2: 15 }
+    tier_credits: 1500
+    level_credits: 7364
+    max_level: 20
+
+  - step: T2_to_T3
+    to_tier: 3
+    materials: { T3: 20 }
+    tier_credits: 10000
+    level_credits: 21824
+    max_level: 30
+
+  - step: T3_to_T4
+    to_tier: 4
+    materials: { T2: 10, T4: 30 }
+    tier_credits: 25000
+    level_credits: 49304
+    max_level: 40
+
+  - step: T4_to_T5
+    to_tier: 5
+    materials: { T2: 15, T3: 20, T5: 35 }
+    tier_credits: 50000
+    level_credits: 69304
+    max_level: 45
+
+  - step: T5_to_T6
+    to_tier: 6
+    materials: { T3: 5, T4: 15, T6: 40 }
+    tier_credits: 75000
+    level_credits: 94204
+    max_level: 50
+
+  - step: T6_to_T7
+    to_tier: 7
+    materials: { T4: 5, T5: 15, T7: 40 }
+    tier_credits: 100000
+    level_credits: 124564
+    max_level: 55
+
+  - step: T7_to_T8
+    to_tier: 8
+    materials: { T5: 5, T6: 15, T8: 40 }
+    tier_credits: 125000
+    level_credits: 160924
+    max_level: 60
+
+  - step: T8_to_T9
+    to_tier: 9
+    materials: { T6: 10, T7: 15, T9: 50 }
+    tier_credits: 150000
+    level_credits: 203844
+    max_level: 65
+
+  - step: T9_to_T10
+    to_tier: 10
+    materials: { T7: 10, T8: 20, T10: 60 }
+    tier_credits: 175000
+    level_credits: 253864
+    max_level: 70
+
+# T1 完成品を 1 個装着した状態から T10 まで上げる時の累計必要量
+cumulative_to_T10:
+  materials:
+    T1: 1
+    T2: 40
+    T3: 45
+    T4: 50
+    T5: 55
+    T6: 65
+    T7: 65
+    T8: 60
+    T9: 50
+    T10: 60
+  tier_credits: 711500
+  level_credits: 986720
+
+# 万能設計図（Tier 0, `50YYYY` ID）の交換レート
+# キー: 代替したい通常設計図の Tier
+# 値  : それ 1 個を作るのに必要な「同カテゴリの万能設計図」の個数
+# 例: wildcard_rate.T5 = 7  → Tier5 設計図 1 個 ⇔ 万能設計図 7 個
+wildcard_rate:
+  T2: 2
+  T3: 3
+  T4: 5
+  T5: 7
+  T6: 10
+  T7: 15
+  T8: 20
+  T9: 30
+  T10: 50
+
+# cumulative_to_T10.materials × wildcard_rate
+# 「T1 完成品 1 個は既にあるとして、T2〜T10 の設計図を全て万能設計図で賄うケースの必要数」
+cumulative_wildcards_if_all_substituted:
+  T2: 80     # 40 × 2
+  T3: 135    # 45 × 3
+  T4: 250    # 50 × 5
+  T5: 385    # 55 × 7
+  T6: 650    # 65 × 10
+  T7: 975    # 65 × 15
+  T8: 1200   # 60 × 20
+  T9: 1500   # 50 × 30
+  T10: 3000  # 60 × 50
+  total: 8175

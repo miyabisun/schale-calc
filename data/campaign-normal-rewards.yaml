@@ -1,0 +1,4786 @@
+source: https://schaledb.com/data/jp/stages.json
+generated_at: "2026-04-24T12:59:03.785Z"
+difficulty: normal
+excluded:
+  - Difficulty === 1 (Hard)
+  - Area % 3 === 0 (challenge areas without equipment drops)
+  - Tier1 完成品装備（4桁ID）
+  - Currency / GachaGroup
+  - RewardType === "FirstClear" | "ThreeStar"
+  - 設計図が1種もドロップしないステージ
+notes:
+  label: "\"任務{Area}-{Stage}\" 形式。Area は元の番号のまま（3の倍数を飛ばすが詰めない）。"
+  expected: Σ(slot.amount × (slot.chance ?? 1))。スロット同士は独立抽選のため単純合算。
+  slots: 未指定 chance は確定ドロップ（= 1.0）として期待値計算。
+total_stages: 90
+stages:
+  - label: 任務4-1
+    area: 4
+    stage: 1
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 102001
+        name: ニットのミトンの設計図
+        category: Gloves
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+      - id: 103001
+        name: ムートンブーツの設計図
+        category: Shoes
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+  - label: 任務4-2
+    area: 4
+    stage: 2
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 104001
+        name: 寒冷地用バッグの設計図
+        category: Bag
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 102001
+        name: ニットのミトンの設計図
+        category: Gloves
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+  - label: 任務4-3
+    area: 4
+    stage: 3
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 102001
+        name: ニットのミトンの設計図
+        category: Gloves
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 103001
+        name: ムートンブーツの設計図
+        category: Shoes
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+  - label: 任務4-4
+    area: 4
+    stage: 4
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 104001
+        name: 寒冷地用バッグの設計図
+        category: Bag
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 103001
+        name: ムートンブーツの設計図
+        category: Shoes
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+  - label: 任務4-5
+    area: 4
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 105001
+        name: マナスルのフェルトバッジの設計図
+        category: Badge
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+      - id: 104001
+        name: 寒冷地用バッグの設計図
+        category: Bag
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 101001
+        name: ニット帽の設計図
+        category: Hat
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+  - label: 任務5-1
+    area: 5
+    stage: 1
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 105001
+        name: マナスルのフェルトバッジの設計図
+        category: Badge
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+  - label: 任務5-2
+    area: 5
+    stage: 2
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+      - id: 109001
+        name: 雪花のペンダントの設計図
+        category: Necklace
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+  - label: 任務5-3
+    area: 5
+    stage: 3
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 107001
+        name: 発熱カイロの設計図
+        category: Charm
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+      - id: 106001
+        name: シュシュの設計図
+        category: Hairpin
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+  - label: 任務5-4
+    area: 5
+    stage: 4
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 107001
+        name: 発熱カイロの設計図
+        category: Charm
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 109001
+        name: 雪花のペンダントの設計図
+        category: Necklace
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 108001
+        name: レザーの腕時計の設計図
+        category: Watch
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+  - label: 任務5-5
+    area: 5
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 0.75
+        slots:
+          - amount: 1
+            chance: 0.75
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 1
+        slots:
+          - amount: 1
+      - id: 105001
+        name: マナスルのフェルトバッジの設計図
+        category: Badge
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 107001
+        name: 発熱カイロの設計図
+        category: Charm
+        tier: 2
+        expected: 0.9
+        slots:
+          - amount: 1
+            chance: 0.9
+      - id: 109001
+        name: 雪花のペンダントの設計図
+        category: Necklace
+        tier: 2
+        expected: 1.2
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.2
+  - label: 任務7-1
+    area: 7
+    stage: 1
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 102002
+        name: ペロロの鍋掴みの設計図
+        category: Gloves
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+      - id: 103002
+        name: ピンキーパカのスリッパの設計図
+        category: Shoes
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+  - label: 任務7-2
+    area: 7
+    stage: 2
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 104002
+        name: ペロロのバッグの設計図
+        category: Bag
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 102002
+        name: ペロロの鍋掴みの設計図
+        category: Gloves
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+  - label: 任務7-3
+    area: 7
+    stage: 3
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 102002
+        name: ペロロの鍋掴みの設計図
+        category: Gloves
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 103002
+        name: ピンキーパカのスリッパの設計図
+        category: Shoes
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+  - label: 任務7-4
+    area: 7
+    stage: 4
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 104002
+        name: ペロロのバッグの設計図
+        category: Bag
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 103002
+        name: ピンキーパカのスリッパの設計図
+        category: Shoes
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+  - label: 任務7-5
+    area: 7
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 105002
+        name: アングリーアデリーのバッジの設計図
+        category: Badge
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+      - id: 104002
+        name: ペロロのバッグの設計図
+        category: Bag
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 101002
+        name: ビッグブラザーの中折れ帽の設計図
+        category: Hat
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+  - label: 任務8-1
+    area: 8
+    stage: 1
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 105002
+        name: アングリーアデリーのバッジの設計図
+        category: Badge
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+  - label: 任務8-2
+    area: 8
+    stage: 2
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+      - id: 109002
+        name: ニコライのロケットペンダントの設計図
+        category: Necklace
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+  - label: 任務8-3
+    area: 8
+    stage: 3
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 107002
+        name: ペロロのお守りの設計図
+        category: Charm
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+      - id: 106002
+        name: モモのヘアピンの設計図
+        category: Hairpin
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+  - label: 任務8-4
+    area: 8
+    stage: 4
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 107002
+        name: ペロロのお守りの設計図
+        category: Charm
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 109002
+        name: ニコライのロケットペンダントの設計図
+        category: Necklace
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 108002
+        name: ウェーブキャットの時計の設計図
+        category: Watch
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+  - label: 任務8-5
+    area: 8
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 1.5
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.5
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 2
+        slots:
+          - amount: 2
+      - id: 105002
+        name: アングリーアデリーのバッジの設計図
+        category: Badge
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 107002
+        name: ペロロのお守りの設計図
+        category: Charm
+        tier: 3
+        expected: 0.84
+        slots:
+          - amount: 1
+            chance: 0.84
+      - id: 109002
+        name: ニコライのロケットペンダントの設計図
+        category: Necklace
+        tier: 3
+        expected: 1.12
+        slots:
+          - amount: 1
+          - amount: 1
+            chance: 0.12
+  - label: 任務10-1
+    area: 10
+    stage: 1
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 102003
+        name: レザーグローブの設計図
+        category: Gloves
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+      - id: 103003
+        name: アンティークなエナメルローファーの設計図
+        category: Shoes
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+  - label: 任務10-2
+    area: 10
+    stage: 2
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 104003
+        name: 紺色のスクールバッグの設計図
+        category: Bag
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 102003
+        name: レザーグローブの設計図
+        category: Gloves
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+  - label: 任務10-3
+    area: 10
+    stage: 3
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 102003
+        name: レザーグローブの設計図
+        category: Gloves
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 103003
+        name: アンティークなエナメルローファーの設計図
+        category: Shoes
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+  - label: 任務10-4
+    area: 10
+    stage: 4
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 104003
+        name: 紺色のスクールバッグの設計図
+        category: Bag
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 103003
+        name: アンティークなエナメルローファーの設計図
+        category: Shoes
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+  - label: 任務10-5
+    area: 10
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 105003
+        name: ベロニカの刺繍バッジの設計図
+        category: Badge
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+      - id: 104003
+        name: 紺色のスクールバッグの設計図
+        category: Bag
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 101003
+        name: リボン付きベレー帽の設計図
+        category: Hat
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+  - label: 任務11-1
+    area: 11
+    stage: 1
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 105003
+        name: ベロニカの刺繍バッジの設計図
+        category: Badge
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+  - label: 任務11-2
+    area: 11
+    stage: 2
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+      - id: 109003
+        name: 十字架のチョーカーの設計図
+        category: Necklace
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+  - label: 任務11-3
+    area: 11
+    stage: 3
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 107003
+        name: クルスの設計図
+        category: Charm
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+      - id: 106003
+        name: 翼のヘアピンの設計図
+        category: Hairpin
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+  - label: 任務11-4
+    area: 11
+    stage: 4
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 107003
+        name: クルスの設計図
+        category: Charm
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 109003
+        name: 十字架のチョーカーの設計図
+        category: Necklace
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 108003
+        name: アンティークな懐中時計の設計図
+        category: Watch
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+  - label: 任務11-5
+    area: 11
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 2.25
+        slots:
+          - amount: 2
+          - amount: 1
+            chance: 0.25
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 3
+        slots:
+          - amount: 3
+      - id: 105003
+        name: ベロニカの刺繍バッジの設計図
+        category: Badge
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 107003
+        name: クルスの設計図
+        category: Charm
+        tier: 4
+        expected: 0.69
+        slots:
+          - amount: 1
+            chance: 0.69
+      - id: 109003
+        name: 十字架のチョーカーの設計図
+        category: Necklace
+        tier: 4
+        expected: 0.92
+        slots:
+          - amount: 1
+            chance: 0.92
+  - label: 任務13-1
+    area: 13
+    stage: 1
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 102004
+        name: タクティカルグローブの設計図
+        category: Gloves
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+      - id: 103004
+        name: 戦闘用ブーツの設計図
+        category: Shoes
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+  - label: 任務13-2
+    area: 13
+    stage: 2
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 105004
+        name: カゼヤマのワッペンの設計図
+        category: Badge
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 102004
+        name: タクティカルグローブの設計図
+        category: Gloves
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+  - label: 任務13-3
+    area: 13
+    stage: 3
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 103004
+        name: 戦闘用ブーツの設計図
+        category: Shoes
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+  - label: 任務13-4
+    area: 13
+    stage: 4
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 104004
+        name: 戦闘用ランドセルの設計図
+        category: Bag
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+      - id: 103004
+        name: 戦闘用ブーツの設計図
+        category: Shoes
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+  - label: 任務13-5
+    area: 13
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 105004
+        name: カゼヤマのワッペンの設計図
+        category: Badge
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+      - id: 102004
+        name: タクティカルグローブの設計図
+        category: Gloves
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 101004
+        name: 防弾ヘルメットの設計図
+        category: Hat
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+  - label: 任務14-1
+    area: 14
+    stage: 1
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 107004
+        name: カモフラダルマの設計図
+        category: Charm
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+      - id: 109004
+        name: ドッグタグの設計図
+        category: Necklace
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+  - label: 任務14-2
+    area: 14
+    stage: 2
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 107004
+        name: カモフラダルマの設計図
+        category: Charm
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+  - label: 任務14-3
+    area: 14
+    stage: 3
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 104004
+        name: 戦闘用ランドセルの設計図
+        category: Bag
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+      - id: 109004
+        name: ドッグタグの設計図
+        category: Necklace
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+  - label: 任務14-4
+    area: 14
+    stage: 4
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 105004
+        name: カゼヤマのワッペンの設計図
+        category: Badge
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 107004
+        name: カモフラダルマの設計図
+        category: Charm
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 108004
+        name: 防塵型の腕時計の設計図
+        category: Watch
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+  - label: 任務14-5
+    area: 14
+    stage: 5
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 3.75
+        slots:
+          - amount: 3
+          - amount: 1
+            chance: 0.75
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 5
+        slots:
+          - amount: 5
+      - id: 104004
+        name: 戦闘用ランドセルの設計図
+        category: Bag
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 106004
+        name: 多目的ヘアピンの設計図
+        category: Hairpin
+        tier: 5
+        expected: 0.54
+        slots:
+          - amount: 1
+            chance: 0.54
+      - id: 109004
+        name: ドッグタグの設計図
+        category: Necklace
+        tier: 5
+        expected: 0.72
+        slots:
+          - amount: 1
+            chance: 0.72
+  - label: 任務16-1
+    area: 16
+    stage: 1
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+      - id: 103005
+        name: ヒールパンプスの設計図
+        category: Shoes
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+  - label: 任務16-2
+    area: 16
+    stage: 2
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+  - label: 任務16-3
+    area: 16
+    stage: 3
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 103005
+        name: ヒールパンプスの設計図
+        category: Shoes
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+  - label: 任務16-4
+    area: 16
+    stage: 4
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 104005
+        name: デビルウイングのトートバッグの設計図
+        category: Bag
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+      - id: 103005
+        name: ヒールパンプスの設計図
+        category: Shoes
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+  - label: 任務16-5
+    area: 16
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+      - id: 102005
+        name: レースのグローブの設計図
+        category: Gloves
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 101005
+        name: フリルのミニハットの設計図
+        category: Hat
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+  - label: 任務17-1
+    area: 17
+    stage: 1
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 107005
+        name: 呪いの人形の設計図
+        category: Charm
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+      - id: 109005
+        name: パンクチョーカーの設計図
+        category: Necklace
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+  - label: 任務17-2
+    area: 17
+    stage: 2
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 107005
+        name: 呪いの人形の設計図
+        category: Charm
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+  - label: 任務17-3
+    area: 17
+    stage: 3
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 104005
+        name: デビルウイングのトートバッグの設計図
+        category: Bag
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+      - id: 109005
+        name: パンクチョーカーの設計図
+        category: Necklace
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+  - label: 任務17-4
+    area: 17
+    stage: 4
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 105005
+        name: ココデビルのバッジの設計図
+        category: Badge
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 107005
+        name: 呪いの人形の設計図
+        category: Charm
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 108005
+        name: ゴシック風の腕時計の設計図
+        category: Watch
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+  - label: 任務17-5
+    area: 17
+    stage: 5
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 5.25
+        slots:
+          - amount: 5
+          - amount: 1
+            chance: 0.25
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 7
+        slots:
+          - amount: 7
+      - id: 104005
+        name: デビルウイングのトートバッグの設計図
+        category: Bag
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 106005
+        name: コウモリのヘアピンの設計図
+        category: Hairpin
+        tier: 6
+        expected: 0.3
+        slots:
+          - amount: 1
+            chance: 0.3
+      - id: 109005
+        name: パンクチョーカーの設計図
+        category: Necklace
+        tier: 6
+        expected: 0.4
+        slots:
+          - amount: 1
+            chance: 0.4
+  - label: 任務19-1
+    area: 19
+    stage: 1
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 103006
+        name: カジュアルスニーカーの設計図
+        category: Shoes
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務19-2
+    area: 19
+    stage: 2
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務19-3
+    area: 19
+    stage: 3
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 103006
+        name: カジュアルスニーカーの設計図
+        category: Shoes
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務19-4
+    area: 19
+    stage: 4
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 104006
+        name: ストリートバッグの設計図
+        category: Bag
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 103006
+        name: カジュアルスニーカーの設計図
+        category: Shoes
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務19-5
+    area: 19
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 102006
+        name: アームカバーの設計図
+        category: Gloves
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101006
+        name: バケットハットの設計図
+        category: Hat
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務20-1
+    area: 20
+    stage: 1
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 107006
+        name: ポケット消臭剤の設計図
+        category: Charm
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 109006
+        name: チェーンネックレスの設計図
+        category: Necklace
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務20-2
+    area: 20
+    stage: 2
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 107006
+        name: ポケット消臭剤の設計図
+        category: Charm
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務20-3
+    area: 20
+    stage: 3
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 104006
+        name: ストリートバッグの設計図
+        category: Bag
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 109006
+        name: チェーンネックレスの設計図
+        category: Necklace
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務20-4
+    area: 20
+    stage: 4
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 105006
+        name: ストリートバッジの設計図
+        category: Badge
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 107006
+        name: ポケット消臭剤の設計図
+        category: Charm
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108006
+        name: ストリートファッションウォッチの設計図
+        category: Watch
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務20-5
+    area: 20
+    stage: 5
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 6.75
+        slots:
+          - amount: 6
+          - amount: 1
+            chance: 0.75
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 9
+        slots:
+          - amount: 9
+      - id: 104006
+        name: ストリートバッグの設計図
+        category: Bag
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106006
+        name: カリグラフィーヘアピンの設計図
+        category: Hairpin
+        tier: 7
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 109006
+        name: チェーンネックレスの設計図
+        category: Necklace
+        tier: 7
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務22-1
+    area: 22
+    stage: 1
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 102007
+        name: パールヤーングローブの設計図
+        category: Gloves
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101007
+        name: リーフリボン付き中折れ帽の設計図
+        category: Hat
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 103007
+        name: 防水登山ブーツの設計図
+        category: Shoes
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務22-2
+    area: 22
+    stage: 2
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 105007
+        name: ローレライバッジの設計図
+        category: Badge
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 102007
+        name: パールヤーングローブの設計図
+        category: Gloves
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 101007
+        name: リーフリボン付き中折れ帽の設計図
+        category: Hat
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務22-3
+    area: 22
+    stage: 3
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 106007
+        name: リーフヘアピンの設計図
+        category: Hairpin
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101007
+        name: リーフリボン付き中折れ帽の設計図
+        category: Hat
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 103007
+        name: 防水登山ブーツの設計図
+        category: Shoes
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務22-4
+    area: 22
+    stage: 4
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 104007
+        name: 蝶柄のショルダーバッグの設計図
+        category: Bag
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106007
+        name: リーフヘアピンの設計図
+        category: Hairpin
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 103007
+        name: 防水登山ブーツの設計図
+        category: Shoes
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務22-5
+    area: 22
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 105007
+        name: ローレライバッジの設計図
+        category: Badge
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 102007
+        name: パールヤーングローブの設計図
+        category: Gloves
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101007
+        name: リーフリボン付き中折れ帽の設計図
+        category: Hat
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務23-1
+    area: 23
+    stage: 1
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 107007
+        name: ドリームキャッチャーの設計図
+        category: Charm
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 109007
+        name: グリーンリーフネックレスの設計図
+        category: Necklace
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108007
+        name: ローレライの腕時計の設計図
+        category: Watch
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務23-2
+    area: 23
+    stage: 2
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 107007
+        name: ドリームキャッチャーの設計図
+        category: Charm
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106007
+        name: リーフヘアピンの設計図
+        category: Hairpin
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 108007
+        name: ローレライの腕時計の設計図
+        category: Watch
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務23-3
+    area: 23
+    stage: 3
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 104007
+        name: 蝶柄のショルダーバッグの設計図
+        category: Bag
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 109007
+        name: グリーンリーフネックレスの設計図
+        category: Necklace
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108007
+        name: ローレライの腕時計の設計図
+        category: Watch
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務23-4
+    area: 23
+    stage: 4
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 105007
+        name: ローレライバッジの設計図
+        category: Badge
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 107007
+        name: ドリームキャッチャーの設計図
+        category: Charm
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108007
+        name: ローレライの腕時計の設計図
+        category: Watch
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務23-5
+    area: 23
+    stage: 5
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 8.25
+        slots:
+          - amount: 8
+          - amount: 1
+            chance: 0.25
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 11
+        slots:
+          - amount: 11
+      - id: 104007
+        name: 蝶柄のショルダーバッグの設計図
+        category: Bag
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106007
+        name: リーフヘアピンの設計図
+        category: Hairpin
+        tier: 8
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 109007
+        name: グリーンリーフネックレスの設計図
+        category: Necklace
+        tier: 8
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務25-1
+    area: 25
+    stage: 1
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 102008
+        name: セーリンググローブの設計図
+        category: Gloves
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101008
+        name: セーラーハットの設計図
+        category: Hat
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 103008
+        name: アクアサンダルの設計図
+        category: Shoes
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務25-2
+    area: 25
+    stage: 2
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 105008
+        name: ハルピュイア・フレキシブルバッジの設計図
+        category: Badge
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 102008
+        name: セーリンググローブの設計図
+        category: Gloves
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 101008
+        name: セーラーハットの設計図
+        category: Hat
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務25-3
+    area: 25
+    stage: 3
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 106008
+        name: アンカーヘアピンの設計図
+        category: Hairpin
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101008
+        name: セーラーハットの設計図
+        category: Hat
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 103008
+        name: アクアサンダルの設計図
+        category: Shoes
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務25-4
+    area: 25
+    stage: 4
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 105008
+        name: ハルピュイア・フレキシブルバッジの設計図
+        category: Badge
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 104008
+        name: スリングドライバックの設計図
+        category: Bag
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106008
+        name: アンカーヘアピンの設計図
+        category: Hairpin
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務25-5
+    area: 25
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 105008
+        name: ハルピュイア・フレキシブルバッジの設計図
+        category: Badge
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 102008
+        name: セーリンググローブの設計図
+        category: Gloves
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101008
+        name: セーラーハットの設計図
+        category: Hat
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務26-1
+    area: 26
+    stage: 1
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 107008
+        name: サメの歯のお守りの設計図
+        category: Charm
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 109008
+        name: オクトパスホルダーの設計図
+        category: Necklace
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108008
+        name: ダイバーウォッチの設計図
+        category: Watch
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務26-2
+    area: 26
+    stage: 2
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 106008
+        name: アンカーヘアピンの設計図
+        category: Hairpin
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 103008
+        name: アクアサンダルの設計図
+        category: Shoes
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108008
+        name: ダイバーウォッチの設計図
+        category: Watch
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務26-3
+    area: 26
+    stage: 3
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 104008
+        name: スリングドライバックの設計図
+        category: Bag
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 107008
+        name: サメの歯のお守りの設計図
+        category: Charm
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108008
+        name: ダイバーウォッチの設計図
+        category: Watch
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務26-4
+    area: 26
+    stage: 4
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 105008
+        name: ハルピュイア・フレキシブルバッジの設計図
+        category: Badge
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 102008
+        name: セーリンググローブの設計図
+        category: Gloves
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108008
+        name: ダイバーウォッチの設計図
+        category: Watch
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務26-5
+    area: 26
+    stage: 5
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 9.75
+        slots:
+          - amount: 9
+          - amount: 1
+            chance: 0.75
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 13
+        slots:
+          - amount: 13
+      - id: 104008
+        name: スリングドライバックの設計図
+        category: Bag
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106008
+        name: アンカーヘアピンの設計図
+        category: Hairpin
+        tier: 9
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 109008
+        name: オクトパスホルダーの設計図
+        category: Necklace
+        tier: 9
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務28-1
+    area: 28
+    stage: 1
+    drops:
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 102009
+        name: スーパーグローブの設計図
+        category: Gloves
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101009
+        name: ゲーミングヘルメットの設計図
+        category: Hat
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 103009
+        name: ゲーミングスリッパの設計図
+        category: Shoes
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務28-2
+    area: 28
+    stage: 2
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 105009
+        name: コインバッジの設計図
+        category: Badge
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 102009
+        name: スーパーグローブの設計図
+        category: Gloves
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 101009
+        name: ゲーミングヘルメットの設計図
+        category: Hat
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務28-3
+    area: 28
+    stage: 3
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 106009
+        name: 電磁波カットヘアピンの設計図
+        category: Hairpin
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101009
+        name: ゲーミングヘルメットの設計図
+        category: Hat
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 103009
+        name: ゲーミングスリッパの設計図
+        category: Shoes
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務28-4
+    area: 28
+    stage: 4
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 105009
+        name: コインバッジの設計図
+        category: Badge
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 104009
+        name: メタルケースの設計図
+        category: Bag
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106009
+        name: 電磁波カットヘアピンの設計図
+        category: Hairpin
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務28-5
+    area: 28
+    stage: 5
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 501000
+        name: 帽子の万能設計図
+        category: Hat
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 105009
+        name: コインバッジの設計図
+        category: Badge
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 102009
+        name: スーパーグローブの設計図
+        category: Gloves
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 101009
+        name: ゲーミングヘルメットの設計図
+        category: Hat
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務29-1
+    area: 29
+    stage: 1
+    drops:
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 107009
+        name: キーキャップトイの設計図
+        category: Charm
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 109009
+        name: メモリネックレスの設計図
+        category: Necklace
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108009
+        name: スクリーンウォッチの設計図
+        category: Watch
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務29-2
+    area: 29
+    stage: 2
+    drops:
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 503000
+        name: シューズの万能設計図
+        category: Shoes
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 106009
+        name: 電磁波カットヘアピンの設計図
+        category: Hairpin
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 103009
+        name: ゲーミングスリッパの設計図
+        category: Shoes
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108009
+        name: スクリーンウォッチの設計図
+        category: Watch
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務29-3
+    area: 29
+    stage: 3
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 507000
+        name: お守りの万能設計図
+        category: Charm
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 104009
+        name: メタルケースの設計図
+        category: Bag
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+      - id: 107009
+        name: キーキャップトイの設計図
+        category: Charm
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108009
+        name: スクリーンウォッチの設計図
+        category: Watch
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+  - label: 任務29-4
+    area: 29
+    stage: 4
+    drops:
+      - id: 505000
+        name: バッジの万能設計図
+        category: Badge
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 502000
+        name: グローブの万能設計図
+        category: Gloves
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 508000
+        name: 腕時計の万能設計図
+        category: Watch
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 105009
+        name: コインバッジの設計図
+        category: Badge
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 102009
+        name: スーパーグローブの設計図
+        category: Gloves
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 108009
+        name: スクリーンウォッチの設計図
+        category: Watch
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
+  - label: 任務29-5
+    area: 29
+    stage: 5
+    drops:
+      - id: 504000
+        name: バッグの万能設計図
+        category: Bag
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 506000
+        name: ヘアピンの万能設計図
+        category: Hairpin
+        tier: 0
+        expected: 11.25
+        slots:
+          - amount: 11
+          - amount: 1
+            chance: 0.25
+      - id: 509000
+        name: ネックレスの万能設計図
+        category: Necklace
+        tier: 0
+        expected: 15
+        slots:
+          - amount: 15
+      - id: 104009
+        name: メタルケースの設計図
+        category: Bag
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 106009
+        name: 電磁波カットヘアピンの設計図
+        category: Hairpin
+        tier: 10
+        expected: 0.258
+        slots:
+          - amount: 1
+            chance: 0.258
+      - id: 109009
+        name: メモリネックレスの設計図
+        category: Necklace
+        tier: 10
+        expected: 0.344
+        slots:
+          - amount: 1
+            chance: 0.344
