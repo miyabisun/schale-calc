@@ -2,10 +2,13 @@
 // data/grind-plan.yaml + data/campaign-normal-rewards.yaml を元に、
 // 非プログラマの先生にも読める日本語レポートを docs/grind-plan.md に書き出す。
 // 方針: 文字は最小限、表ベース。
+// 純粋関数の実体は src/functions/{format,targetLabel}.js にある。
 
 const fs = require('node:fs');
 const path = require('node:path');
 const yaml = require('js-yaml');
+const { categoryJa, fmt, signed, catOrder } = require('../src/functions/format');
+const { targetLabel } = require('../src/functions/targetLabel');
 
 const ROOT = path.join(__dirname, '..');
 const PLAN = yaml.load(fs.readFileSync(path.join(ROOT, 'data', 'grind-plan.yaml'), 'utf8'));
@@ -14,42 +17,9 @@ const UPGRADE = yaml.load(fs.readFileSync(path.join(ROOT, 'data', 'equipment-upg
 const RATE = UPGRADE.wildcard_rate;
 const OUT = path.join(ROOT, 'docs', 'grind-plan.md');
 
-const CATEGORY_JA = {
-  Hat: '帽子', Gloves: '手袋', Shoes: '靴',
-  Bag: 'カバン', Badge: 'バッジ', Hairpin: 'ヘアピン',
-  Charm: 'お守り', Watch: '時計', Necklace: 'ネックレス',
-};
-const ja = (c) => CATEGORY_JA[c] ?? c;
-
 const AP_PER_CLEAR = 10;
-const tierKeys = Object.keys(PLAN.fulfillment[0].tiers);
 const stageByLabel = new Map(REWARDS.stages.map((s) => [s.label, s]));
 
-const fmt = (v, n = 1) => {
-  if (v === 0) return '0';
-  return Number(v).toFixed(n).replace(/\.?0+$/, '') || '0';
-};
-const signed = (v) => (v > 0 ? '+' : '') + fmt(v);
-
-// そのステージで何 Tier の何カテゴリを狙うかの略称
-// GachaGroup 由来の T-2/-3 サブドロップは周知なので主な目当てから除外する。
-function targetLabel(stageLabel) {
-  const s = stageByLabel.get(stageLabel);
-  if (!s) return '';
-  const byTier = {};
-  for (const d of s.drops) {
-    if (d.tier === 0) continue;
-    const hasMainDrop = d.slots.some((sl) => sl.source !== 'gacha');
-    if (!hasMainDrop) continue;
-    (byTier[d.tier] ??= new Set()).add(d.category);
-  }
-  return Object.entries(byTier)
-    .sort((a, b) => +b[0] - +a[0])
-    .map(([t, cats]) => `T${t}: ${[...cats].map(ja).join('、')}`)
-    .join(' / ');
-}
-
-// --- 組み立て ---
 const L = [];
 const P = (s = '') => L.push(s);
 
@@ -70,7 +40,7 @@ P();
 P(`| ステージ | 周回 | AP | 主な目当て |`);
 P(`|:---|---:|---:|:---|`);
 for (const p of PLAN.plan) {
-  P(`| ${p.stage} | ${p.clears} | ${(p.clears * AP_PER_CLEAR).toLocaleString()} | ${targetLabel(p.stage)} |`);
+  P(`| ${p.stage} | ${p.clears} | ${(p.clears * AP_PER_CLEAR).toLocaleString()} | ${targetLabel(stageByLabel.get(p.stage), categoryJa)} |`);
 }
 P(`| **合計** | **${PLAN.summary.total_clears.toLocaleString()}** | **${PLAN.summary.total_ap.toLocaleString()}** | |`);
 P();
@@ -90,7 +60,7 @@ for (const f of PLAN.fulfillment) {
   for (const tk of STOCK_TIERS) {
     const t = f.tiers[tk];
     if (!t) continue;
-    P(`| ${ja(f.category)} | ${tk} | ${t.required.toLocaleString()} |`);
+    P(`| ${categoryJa(f.category)} | ${tk} | ${t.required.toLocaleString()} |`);
   }
 }
 P();
@@ -99,7 +69,7 @@ P();
 P(`| カテゴリ | 必要数 |`);
 P(`|:---|---:|`);
 for (const w of PLAN.wildcard_ledger) {
-  P(`| ${ja(w.category)} | ${w.consumed.toLocaleString()} |`);
+  P(`| ${categoryJa(w.category)} | ${w.consumed.toLocaleString()} |`);
 }
 P();
 
@@ -110,13 +80,12 @@ P();
 P(`| カテゴリ | 必要 | 獲得 | 余剰 |`);
 P(`|:---|---:|---:|---:|`);
 for (const f of PLAN.fulfillment) {
-  P(`| ${ja(f.category)} | ${f.total_required} | ${fmt(f.total_obtained)} | ${signed(f.total_surplus)} |`);
+  P(`| ${categoryJa(f.category)} | ${f.total_required} | ${fmt(f.total_obtained)} | ${signed(f.total_surplus)} |`);
 }
 P();
 
-// 余剰 1 以上の (category, tier) のみ（端数はノイズとして省略）
-// 並び順は黄金比 (preset.demand 定義順) → Tier 昇順 で在庫目安と揃える。
-const catOrder = new Map(PLAN.fulfillment.map((f, i) => [f.category, i]));
+// 余剰 1 以上の (category, tier) のみ。並び順は黄金比 (preset.demand 定義順) → Tier 昇順 で在庫目安と揃える。
+const order = catOrder(PLAN.fulfillment);
 const surplusRows = [];
 for (const f of PLAN.fulfillment) {
   for (const [tk, t] of Object.entries(f.tiers)) {
@@ -124,8 +93,7 @@ for (const f of PLAN.fulfillment) {
   }
 }
 surplusRows.sort((a, b) =>
-  catOrder.get(a.category) - catOrder.get(b.category) ||
-  +a.tier.slice(1) - +b.tier.slice(1)
+  order.get(a.category) - order.get(b.category) || Number(a.tier.slice(1)) - Number(b.tier.slice(1))
 );
 
 P(`### Tier 別の余り (+1 以上)`);
@@ -133,7 +101,7 @@ P();
 P(`| カテゴリ | Tier | 必要 | 獲得 | 余剰 |`);
 P(`|:---|:---|---:|---:|---:|`);
 for (const s of surplusRows) {
-  P(`| ${ja(s.category)} | ${s.tier} | ${s.required} | ${fmt(s.obtained)} | ${signed(s.surplus)} |`);
+  P(`| ${categoryJa(s.category)} | ${s.tier} | ${s.required} | ${fmt(s.obtained)} | ${signed(s.surplus)} |`);
 }
 P();
 
@@ -147,7 +115,7 @@ P();
 P(`| カテゴリ | 入手 | 消費 | 余り |`);
 P(`|:---|---:|---:|---:|`);
 for (const w of PLAN.wildcard_ledger) {
-  P(`| ${ja(w.category)} | ${fmt(w.supply)} | ${fmt(w.consumed)} | ${signed(w.surplus)} |`);
+  P(`| ${categoryJa(w.category)} | ${fmt(w.supply)} | ${fmt(w.consumed)} | ${signed(w.surplus)} |`);
 }
 P();
 
@@ -158,10 +126,9 @@ P(`|:---|:---|:---|`);
 for (const w of PLAN.wildcard_ledger) {
   const tiers = Object.entries(w.used_for)
     .filter(([, v]) => v > 0)
-    .sort((a, b) => +a[0].slice(1) - +b[0].slice(1));
+    .sort((a, b) => Number(a[0].slice(1)) - Number(b[0].slice(1)));
   for (const [tk, made] of tiers) {
-    const consumed = made * RATE[tk];
-    P(`| ${ja(w.category)} | ${tk} | ${consumed} → ${made} |`);
+    P(`| ${categoryJa(w.category)} | ${tk} | ${made * RATE[tk]} → ${made} |`);
   }
 }
 P();
