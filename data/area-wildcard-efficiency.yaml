@@ -1,0 +1,426 @@
+generated_at: "2026-04-26T09:06:15.372Z"
+description: 任務 Normal の各 Area で 1 出撃あたり削減できる万能設計図相当 (2倍キャンペーン)。
+multiplier: 2
+ap_per_clear: 10
+notes:
+  computation: カテゴリごとの (万能ドロップ + Σ Tier装備 × wildcard_rate[Tier])。multiplier 込み。
+  breakdown_format: 高い枠 + 低い枠 + 低い枠 = 総計。同ステージ内 3 カテゴリの内、1 枠だけ約 1.33 倍 (4:3 比) ドロップする。
+  sample_stage: 同 Area 内の 5 ステージは数値構造が同じなので 1 ステージを代表として記載。
+  ap_per_wildcard: 万能設計図 1 枚相当を削るのに必要な AP。低いほど効率良い。
+  primary_only: main Tier 単体の万能換算。その Tier の装備が満タンで不要になると、この分は「無駄ドロップ」として失われる。
+  after_primary_satisfied: primary が不要になった後の残効率 (= total - primary_only.total)。サブドロップと万能ドロップだけで評価。
+areas:
+  - area: 4
+    main_tier: T2
+    sample_stage: 任務4-1
+    per_clear:
+      total: 17
+      ap_per_wildcard: 0.5882
+      breakdown: 6.8 + 5.1 + 5.1 = 17
+      high_slot: 6.8
+      low_slots:
+        - 5.1
+        - 5.1
+    primary_only:
+      tier: T2
+      total: 12
+      breakdown: 4.8 + 3.6 + 3.6 = 12
+      high_slot: 4.8
+      low_slots:
+        - 3.6
+        - 3.6
+      share_of_total: 0.706
+    after_primary_satisfied:
+      total: 5
+      ap_per_wildcard: 2
+  - area: 5
+    main_tier: T2
+    sample_stage: 任務5-1
+    per_clear:
+      total: 17
+      ap_per_wildcard: 0.5882
+      breakdown: 6.8 + 5.1 + 5.1 = 17
+      high_slot: 6.8
+      low_slots:
+        - 5.1
+        - 5.1
+    primary_only:
+      tier: T2
+      total: 12
+      breakdown: 4.8 + 3.6 + 3.6 = 12
+      high_slot: 4.8
+      low_slots:
+        - 3.6
+        - 3.6
+      share_of_total: 0.706
+    after_primary_satisfied:
+      total: 5
+      ap_per_wildcard: 2
+  - area: 7
+    main_tier: T3
+    sample_stage: 任務7-1
+    per_clear:
+      total: 26.8
+      ap_per_wildcard: 0.3731
+      breakdown: 10.72 + 8.04 + 8.04 = 26.8
+      high_slot: 10.72
+      low_slots:
+        - 8.04
+        - 8.04
+    primary_only:
+      tier: T3
+      total: 16.8
+      breakdown: 6.72 + 5.04 + 5.04 = 16.8
+      high_slot: 6.72
+      low_slots:
+        - 5.04
+        - 5.04
+      share_of_total: 0.627
+    after_primary_satisfied:
+      total: 10
+      ap_per_wildcard: 1
+  - area: 8
+    main_tier: T3
+    sample_stage: 任務8-1
+    per_clear:
+      total: 26.8
+      ap_per_wildcard: 0.3731
+      breakdown: 10.72 + 8.04 + 8.04 = 26.8
+      high_slot: 10.72
+      low_slots:
+        - 8.04
+        - 8.04
+    primary_only:
+      tier: T3
+      total: 16.8
+      breakdown: 6.72 + 5.04 + 5.04 = 16.8
+      high_slot: 6.72
+      low_slots:
+        - 5.04
+        - 5.04
+      share_of_total: 0.627
+    after_primary_satisfied:
+      total: 10
+      ap_per_wildcard: 1
+  - area: 10
+    main_tier: T4
+    sample_stage: 任務10-1
+    per_clear:
+      total: 40
+      ap_per_wildcard: 0.25
+      breakdown: 16 + 12 + 12 = 40
+      high_slot: 16
+      low_slots:
+        - 12
+        - 12
+    primary_only:
+      tier: T4
+      total: 23
+      breakdown: 9.2 + 6.9 + 6.9 = 23
+      high_slot: 9.2
+      low_slots:
+        - 6.9
+        - 6.9
+      share_of_total: 0.575
+    after_primary_satisfied:
+      total: 17
+      ap_per_wildcard: 0.5882
+  - area: 11
+    main_tier: T4
+    sample_stage: 任務11-1
+    per_clear:
+      total: 40
+      ap_per_wildcard: 0.25
+      breakdown: 16 + 12 + 12 = 40
+      high_slot: 16
+      low_slots:
+        - 12
+        - 12
+    primary_only:
+      tier: T4
+      total: 23
+      breakdown: 9.2 + 6.9 + 6.9 = 23
+      high_slot: 9.2
+      low_slots:
+        - 6.9
+        - 6.9
+      share_of_total: 0.575
+    after_primary_satisfied:
+      total: 17
+      ap_per_wildcard: 0.5882
+  - area: 13
+    main_tier: T5
+    sample_stage: 任務13-1
+    per_clear:
+      total: 54.2
+      ap_per_wildcard: 0.1845
+      breakdown: 21.68 + 16.26 + 16.26 = 54.2
+      high_slot: 21.68
+      low_slots:
+        - 16.26
+        - 16.26
+    primary_only:
+      tier: T5
+      total: 25.2
+      breakdown: 10.08 + 7.56 + 7.56 = 25.2
+      high_slot: 10.08
+      low_slots:
+        - 7.56
+        - 7.56
+      share_of_total: 0.465
+    after_primary_satisfied:
+      total: 29
+      ap_per_wildcard: 0.3448
+  - area: 14
+    main_tier: T5
+    sample_stage: 任務14-1
+    per_clear:
+      total: 54.2
+      ap_per_wildcard: 0.1845
+      breakdown: 21.68 + 16.26 + 16.26 = 54.2
+      high_slot: 21.68
+      low_slots:
+        - 16.26
+        - 16.26
+    primary_only:
+      tier: T5
+      total: 25.2
+      breakdown: 10.08 + 7.56 + 7.56 = 25.2
+      high_slot: 10.08
+      low_slots:
+        - 7.56
+        - 7.56
+      share_of_total: 0.465
+    after_primary_satisfied:
+      total: 29
+      ap_per_wildcard: 0.3448
+  - area: 16
+    main_tier: T6
+    sample_stage: 任務16-1
+    per_clear:
+      total: 61.5
+      ap_per_wildcard: 0.1626
+      breakdown: 24.6 + 18.45 + 18.45 = 61.5
+      high_slot: 24.6
+      low_slots:
+        - 18.45
+        - 18.45
+    primary_only:
+      tier: T6
+      total: 20
+      breakdown: 8 + 6 + 6 = 20
+      high_slot: 8
+      low_slots:
+        - 6
+        - 6
+      share_of_total: 0.325
+    after_primary_satisfied:
+      total: 41.5
+      ap_per_wildcard: 0.241
+  - area: 17
+    main_tier: T6
+    sample_stage: 任務17-1
+    per_clear:
+      total: 61.5
+      ap_per_wildcard: 0.1626
+      breakdown: 24.6 + 18.45 + 18.45 = 61.5
+      high_slot: 24.6
+      low_slots:
+        - 18.45
+        - 18.45
+    primary_only:
+      tier: T6
+      total: 20
+      breakdown: 8 + 6 + 6 = 20
+      high_slot: 8
+      low_slots:
+        - 6
+        - 6
+      share_of_total: 0.325
+    after_primary_satisfied:
+      total: 41.5
+      ap_per_wildcard: 0.241
+  - area: 19
+    main_tier: T7
+    sample_stage: 任務19-1
+    per_clear:
+      total: 80.3
+      ap_per_wildcard: 0.1245
+      breakdown: 32.12 + 24.09 + 24.09 = 80.3
+      high_slot: 32.12
+      low_slots:
+        - 24.09
+        - 24.09
+    primary_only:
+      tier: T7
+      total: 25.8
+      breakdown: 10.32 + 7.74 + 7.74 = 25.8
+      high_slot: 10.32
+      low_slots:
+        - 7.74
+        - 7.74
+      share_of_total: 0.321
+    after_primary_satisfied:
+      total: 54.5
+      ap_per_wildcard: 0.1835
+  - area: 20
+    main_tier: T7
+    sample_stage: 任務20-1
+    per_clear:
+      total: 80.3
+      ap_per_wildcard: 0.1245
+      breakdown: 32.12 + 24.09 + 24.09 = 80.3
+      high_slot: 32.12
+      low_slots:
+        - 24.09
+        - 24.09
+    primary_only:
+      tier: T7
+      total: 25.8
+      breakdown: 10.32 + 7.74 + 7.74 = 25.8
+      high_slot: 10.32
+      low_slots:
+        - 7.74
+        - 7.74
+      share_of_total: 0.321
+    after_primary_satisfied:
+      total: 54.5
+      ap_per_wildcard: 0.1835
+  - area: 22
+    main_tier: T8
+    sample_stage: 任務22-1
+    per_clear:
+      total: 102.9
+      ap_per_wildcard: 0.0972
+      breakdown: 41.16 + 30.87 + 30.87 = 102.9
+      high_slot: 41.16
+      low_slots:
+        - 30.87
+        - 30.87
+    primary_only:
+      tier: T8
+      total: 34.4
+      breakdown: 13.76 + 10.32 + 10.32 = 34.4
+      high_slot: 13.76
+      low_slots:
+        - 10.32
+        - 10.32
+      share_of_total: 0.334
+    after_primary_satisfied:
+      total: 68.5
+      ap_per_wildcard: 0.146
+  - area: 23
+    main_tier: T8
+    sample_stage: 任務23-1
+    per_clear:
+      total: 102.9
+      ap_per_wildcard: 0.0972
+      breakdown: 41.16 + 30.87 + 30.87 = 102.9
+      high_slot: 41.16
+      low_slots:
+        - 30.87
+        - 30.87
+    primary_only:
+      tier: T8
+      total: 34.4
+      breakdown: 13.76 + 10.32 + 10.32 = 34.4
+      high_slot: 13.76
+      low_slots:
+        - 10.32
+        - 10.32
+      share_of_total: 0.334
+    after_primary_satisfied:
+      total: 68.5
+      ap_per_wildcard: 0.146
+  - area: 25
+    main_tier: T9
+    sample_stage: 任務25-1
+    per_clear:
+      total: 136.6
+      ap_per_wildcard: 0.0732
+      breakdown: 54.64 + 40.98 + 40.98 = 136.6
+      high_slot: 54.64
+      low_slots:
+        - 40.98
+        - 40.98
+    primary_only:
+      tier: T9
+      total: 51.6
+      breakdown: 20.64 + 15.48 + 15.48 = 51.6
+      high_slot: 20.64
+      low_slots:
+        - 15.48
+        - 15.48
+      share_of_total: 0.378
+    after_primary_satisfied:
+      total: 85
+      ap_per_wildcard: 0.1176
+  - area: 26
+    main_tier: T9
+    sample_stage: 任務26-1
+    per_clear:
+      total: 136.6
+      ap_per_wildcard: 0.0732
+      breakdown: 54.64 + 40.98 + 40.98 = 136.6
+      high_slot: 54.64
+      low_slots:
+        - 40.98
+        - 40.98
+    primary_only:
+      tier: T9
+      total: 51.6
+      breakdown: 20.64 + 15.48 + 15.48 = 51.6
+      high_slot: 20.64
+      low_slots:
+        - 15.48
+        - 15.48
+      share_of_total: 0.378
+    after_primary_satisfied:
+      total: 85
+      ap_per_wildcard: 0.1176
+  - area: 28
+    main_tier: T10
+    sample_stage: 任務28-1
+    per_clear:
+      total: 188.5
+      ap_per_wildcard: 0.0531
+      breakdown: 75.4 + 56.55 + 56.55 = 188.5
+      high_slot: 75.4
+      low_slots:
+        - 56.55
+        - 56.55
+    primary_only:
+      tier: T10
+      total: 86
+      breakdown: 34.4 + 25.8 + 25.8 = 86
+      high_slot: 34.4
+      low_slots:
+        - 25.8
+        - 25.8
+      share_of_total: 0.456
+    after_primary_satisfied:
+      total: 102.5
+      ap_per_wildcard: 0.0976
+  - area: 29
+    main_tier: T10
+    sample_stage: 任務29-1
+    per_clear:
+      total: 188.5
+      ap_per_wildcard: 0.0531
+      breakdown: 75.4 + 56.55 + 56.55 = 188.5
+      high_slot: 75.4
+      low_slots:
+        - 56.55
+        - 56.55
+    primary_only:
+      tier: T10
+      total: 86
+      breakdown: 34.4 + 25.8 + 25.8 = 86
+      high_slot: 34.4
+      low_slots:
+        - 25.8
+        - 25.8
+      share_of_total: 0.456
+    after_primary_satisfied:
+      total: 102.5
+      ap_per_wildcard: 0.0976

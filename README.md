@@ -6,9 +6,12 @@
 
 計算結果はこちらです。
 
-- **[任務Normal 2倍期間 周回プラン](docs/grind-plan.md)**
+- **[オニア先生の黄金比を満たす最小 AP プラン](docs/onia-golden-plan.md)** — 黄金比を在庫として用意するための最小 AP の参考値。
+- **[Area 別 1 出撃あたり万能設計図削減量](docs/area-wildcard-efficiency.md)** — エリア選びの効率比較。
 
-育成目標は [オニア先生の黄金比](docs/oniea-golden-ratio.md) を採用しています。
+> 2倍期間中の最終運用 (= 周回プラン本編) は別途策定中。
+
+育成目標は [オニア先生の黄金比](docs/onia-golden-ratio.md) を採用しています。
 
 ---
 

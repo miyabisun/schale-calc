@@ -44,7 +44,7 @@
 ## 期待値ベースの最適化
 
 `data/campaign-normal-rewards.yaml` のステージ別期待ドロップ数と、本ファイルの昇格必要量・万能設計図レートを組み合わせて、
-`scripts/plan-grind.js` が線形計画で最小周回プランを算出する。生成結果は [`docs/grind-plan.md`](./grind-plan.md)。
+`scripts/plan-onia-golden.js` が線形計画で最小周回プランを算出する。生成結果は [`docs/onia-golden-plan.md`](./onia-golden-plan.md)。
 
 ## 既知の注意点
 

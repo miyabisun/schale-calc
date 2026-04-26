@@ -1,6 +1,6 @@
 # オニア先生の黄金比
 
-本リポジトリの育成目標プリセット `oniea_golden_ratio` の出典。
+本リポジトリの育成目標プリセット `onia_golden_ratio` の出典。
 
 ## 出典
 
@@ -31,5 +31,5 @@
 
 ## リポジトリでの扱い
 
-- 構造化データ: [`data/demand.yaml`](../data/demand.yaml) の `presets.oniea_golden_ratio`
-- この配分に対する周回プラン: [`docs/grind-plan.md`](./grind-plan.md)
+- 構造化データ: [`data/demand.yaml`](../data/demand.yaml) の `presets.onia_golden_ratio`
+- この配分を満たす最小 AP プラン: [`docs/onia-golden-plan.md`](./onia-golden-plan.md)

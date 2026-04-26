@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// data/grind-plan.yaml + data/campaign-normal-rewards.yaml を元に、
-// 非プログラマの先生にも読める日本語レポートを docs/grind-plan.md に書き出す。
+// data/onia-golden-plan.yaml + data/campaign-normal-rewards.yaml を元に、
+// 非プログラマの先生にも読める日本語レポートを docs/onia-golden-plan.md に書き出す。
 // 方針: 文字は最小限、表ベース。
 // 純粋関数の実体は src/functions/{format,targetLabel}.js にある。
 
@@ -11,11 +11,11 @@ const { categoryJa, fmt, signed, catOrder } = require('../src/functions/format')
 const { targetLabel } = require('../src/functions/targetLabel');
 
 const ROOT = path.join(__dirname, '..');
-const PLAN = yaml.load(fs.readFileSync(path.join(ROOT, 'data', 'grind-plan.yaml'), 'utf8'));
+const PLAN = yaml.load(fs.readFileSync(path.join(ROOT, 'data', 'onia-golden-plan.yaml'), 'utf8'));
 const REWARDS = yaml.load(fs.readFileSync(path.join(ROOT, 'data', 'campaign-normal-rewards.yaml'), 'utf8'));
 const UPGRADE = yaml.load(fs.readFileSync(path.join(ROOT, 'data', 'equipment-upgrade.yaml'), 'utf8'));
 const RATE = UPGRADE.wildcard_rate;
-const OUT = path.join(ROOT, 'docs', 'grind-plan.md');
+const OUT = path.join(ROOT, 'docs', 'onia-golden-plan.md');
 
 const AP_PER_CLEAR = 10;
 const stageByLabel = new Map(REWARDS.stages.map((s) => [s.label, s]));
@@ -23,9 +23,10 @@ const stageByLabel = new Map(REWARDS.stages.map((s) => [s.label, s]));
 const L = [];
 const P = (s = '') => L.push(s);
 
-P(`# 任務Normal 2倍期間 周回プラン`);
+P(`# オニア先生の黄金比を満たす最小 AP プラン`);
 P();
-P(`> \`npm run plan\` で自動生成。プリセットは [${PLAN.preset}](./oniea-golden-ratio.md)。`);
+P(`> \`npm run plan:onia-golden\` で自動生成。プリセットは [${PLAN.preset}](./onia-golden-ratio.md)。`);
+P(`> 黄金比を在庫として用意するための最小 AP の参考値。2倍期間の実運用 (= 周回プラン本編) は別途策定する。`);
 P();
 
 P(`## 結論`);
@@ -143,7 +144,7 @@ P();
 
 P(`---`);
 P();
-P(`計算仕様: [任務](./campaign-spec.md) / [装備昇格](./equipment-upgrade.md) / [素データ](../data/grind-plan.yaml)`);
+P(`計算仕様: [任務](./campaign-spec.md) / [装備昇格](./equipment-upgrade.md) / [素データ](../data/onia-golden-plan.yaml)`);
 P();
 
 fs.writeFileSync(OUT, L.join('\n'));

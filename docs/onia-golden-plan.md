@@ -1,6 +1,7 @@
-# 任務Normal 2倍期間 周回プラン
+# オニア先生の黄金比を満たす最小 AP プラン
 
-> `npm run plan` で自動生成。プリセットは [oniea_golden_ratio](./oniea-golden-ratio.md)。
+> `npm run plan:onia-golden` で自動生成。プリセットは [onia_golden_ratio](./onia-golden-ratio.md)。
+> 黄金比を在庫として用意するための最小 AP の参考値。2倍期間の実運用 (= 周回プラン本編) は別途策定する。
 
 ## 結論
 
@@ -213,4 +214,4 @@
 
 ---
 
-計算仕様: [任務](./campaign-spec.md) / [装備昇格](./equipment-upgrade.md) / [素データ](../data/grind-plan.yaml)
+計算仕様: [任務](./campaign-spec.md) / [装備昇格](./equipment-upgrade.md) / [素データ](../data/onia-golden-plan.yaml)

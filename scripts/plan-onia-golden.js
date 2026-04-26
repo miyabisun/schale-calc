@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-// 任務 Normal 2倍期間の最小周回プランを LP で求めて data/grind-plan.yaml に書き出す。
+// オニア先生の黄金比 (= demand プリセット) を在庫として用意するための最小 AP プランを LP で
+// 求めて data/onia-golden-plan.yaml に書き出す。
+// 2倍期間の実運用 (= grind-plan, 後日策定) とは別物で、ここは黄金比を満たす最小 AP の参考値。
 //
 // 入力:
 //   data/campaign-normal-rewards.yaml … ステージ別の装備期待ドロップ数
@@ -25,7 +27,7 @@ const {
 
 const DATA = path.join(__dirname, '..', 'data');
 const loadYaml = (f) => yaml.load(fs.readFileSync(path.join(DATA, f), 'utf8'));
-const OUT_PATH = path.join(DATA, 'grind-plan.yaml');
+const OUT_PATH = path.join(DATA, 'onia-golden-plan.yaml');
 
 const MULTIPLIER = 2;     // Normal 2倍キャンペーン
 const AP_PER_CLEAR = 10;

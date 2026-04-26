@@ -1,13 +1,13 @@
 # 育成目標プリセット。
-# キー `active` で使うプリセット名を指定する。plan-grind.js はこれを読む。
+# キー `active` で使うプリセット名を指定する。plan-onia-golden.js はこれを読む。
 #
 # demand[Category] は「そのカテゴリの装備を target_tier まで育てる生徒の人数」。
 # T1 完成品は既に装着済み前提で、T2 以降の設計図を集めるのに必要な周回計画を求める。
 
-active: oniea_golden_ratio
+active: onia_golden_ratio
 
 presets:
-  oniea_golden_ratio:
+  onia_golden_ratio:
     description: "オニア先生が提唱する月次在庫指針の黄金比（2026-04 時点）"
     target_tier: 10
     demand:
