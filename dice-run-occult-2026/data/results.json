@@ -1,0 +1,270 @@
+{
+  "main": {
+    "patterns": 500,
+    "strategies": {
+      "A": {
+        "kakera": {
+          "mean": 582.95,
+          "half": 4.12
+        },
+        "report": {
+          "mean": 181.2,
+          "half": 2.66
+        },
+        "credit": {
+          "mean": 6486,
+          "half": 92.29
+        },
+        "fixedUsed": {
+          "mean": 45.11,
+          "half": 0.38
+        },
+        "fixedGained": {
+          "mean": 29.11,
+          "half": 0.38
+        },
+        "maxFixedReceived": 57,
+        "endGap": 0.179
+      },
+      "B": {
+        "kakera": {
+          "mean": 592.36,
+          "half": 4.18
+        },
+        "report": {
+          "mean": 188.96,
+          "half": 2.63
+        },
+        "credit": {
+          "mean": 5722.8,
+          "half": 88.13
+        },
+        "fixedUsed": {
+          "mean": 41.48,
+          "half": 0.33
+        },
+        "fixedGained": {
+          "mean": 25.48,
+          "half": 0.33
+        },
+        "maxFixedReceived": 52,
+        "endGap": 0.152
+      },
+      "C": {
+        "kakera": {
+          "mean": 531.98,
+          "half": 3.9
+        },
+        "report": {
+          "mean": 175.62,
+          "half": 2.94
+        },
+        "credit": {
+          "mean": 7604.4,
+          "half": 93
+        },
+        "fixedUsed": {
+          "mean": 61.38,
+          "half": 0.43
+        },
+        "fixedGained": {
+          "mean": 45.38,
+          "half": 0.43
+        },
+        "maxFixedReceived": 75,
+        "endGap": 0.004
+      },
+      "D": {
+        "kakera": {
+          "mean": 540.14,
+          "half": 3.7
+        },
+        "report": {
+          "mean": 174.74,
+          "half": 2.61
+        },
+        "credit": {
+          "mean": 7572,
+          "half": 89.68
+        },
+        "fixedUsed": {
+          "mean": 57.87,
+          "half": 0.44
+        },
+        "fixedGained": {
+          "mean": 41.87,
+          "half": 0.44
+        },
+        "maxFixedReceived": 75,
+        "endGap": 0.001
+      }
+    },
+    "ranking": [
+      "B",
+      "A",
+      "D",
+      "C"
+    ],
+    "diffs": {
+      "A": {
+        "mean": 9.41,
+        "half": 4.99
+      },
+      "D": {
+        "mean": 52.22,
+        "half": 5.17
+      },
+      "C": {
+        "mean": 60.38,
+        "half": 5.38
+      }
+    }
+  },
+  "independent": {
+    "seed": 20261007,
+    "patterns": 10000,
+    "strategies": {
+      "A": {
+        "kakera": {
+          "mean": 583.95,
+          "half": 0.9
+        },
+        "report": {
+          "mean": 181.14,
+          "half": 0.62
+        },
+        "credit": {
+          "mean": 6566.07,
+          "half": 20.61
+        },
+        "fixedUsed": {
+          "mean": 45.34,
+          "half": 0.09
+        },
+        "fixedGained": {
+          "mean": 29.34,
+          "half": 0.09
+        },
+        "maxFixedReceived": 61
+      },
+      "B": {
+        "kakera": {
+          "mean": 596.2,
+          "half": 0.93
+        },
+        "report": {
+          "mean": 188.5,
+          "half": 0.63
+        },
+        "credit": {
+          "mean": 5722.65,
+          "half": 19.5
+        },
+        "fixedUsed": {
+          "mean": 41.66,
+          "half": 0.08
+        },
+        "fixedGained": {
+          "mean": 25.66,
+          "half": 0.08
+        },
+        "maxFixedReceived": 57
+      },
+      "C": {
+        "kakera": {
+          "mean": 533.97,
+          "half": 0.86
+        },
+        "report": {
+          "mean": 176.64,
+          "half": 0.63
+        },
+        "credit": {
+          "mean": 7615.38,
+          "half": 21.85
+        },
+        "fixedUsed": {
+          "mean": 61.27,
+          "half": 0.09
+        },
+        "fixedGained": {
+          "mean": 45.27,
+          "half": 0.09
+        },
+        "maxFixedReceived": 76
+      },
+      "D": {
+        "kakera": {
+          "mean": 543.31,
+          "half": 0.87
+        },
+        "report": {
+          "mean": 175.86,
+          "half": 0.61
+        },
+        "credit": {
+          "mean": 7455.39,
+          "half": 21.74
+        },
+        "fixedUsed": {
+          "mean": 57.64,
+          "half": 0.1
+        },
+        "fixedGained": {
+          "mean": 41.64,
+          "half": 0.1
+        },
+        "maxFixedReceived": 74
+      }
+    },
+    "ranking": [
+      "B",
+      "A",
+      "D",
+      "C"
+    ],
+    "diffs": {
+      "A": {
+        "mean": 12.25,
+        "half": 1.11
+      },
+      "D": {
+        "mean": 52.89,
+        "half": 1.22
+      },
+      "C": {
+        "mean": 62.23,
+        "half": 1.22
+      }
+    }
+  },
+  "table": {
+    "normal": {
+      "counts": [
+        16863,
+        16601,
+        16530,
+        16637,
+        16647,
+        16722
+      ],
+      "chi2": 3.95,
+      "critical": 11.07,
+      "uniform": true
+    },
+    "fixed": {
+      "counts": [
+        24904,
+        24883,
+        25095,
+        25036,
+        25098,
+        24984
+      ],
+      "chi2": 1.72,
+      "critical": 11.07,
+      "uniform": true
+    },
+    "fixedLength": 300
+  }
+}
