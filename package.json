@@ -10,6 +10,7 @@
     "plan:onia-golden": "node equipment-blueprint/scripts/plan-onia-golden.js && node equipment-blueprint/scripts/build-onia-golden-report.js",
     "build:gacha": "node gacha/scripts/calculate.js && node gacha/scripts/compare.js && node gacha/scripts/pickup.js",
     "build:dice-run": "node dice-run-occult-2026/scripts/build.js",
+    "solve:dice-run": "node dice-run-occult-2026/scripts/solve.js",
     "build": "npm run build:normal && npm run plan:onia-golden && npm run build:gacha && npm run build:dice-run",
     "test": "node --test equipment-blueprint/test/functions/*.test.js gacha/scripts/*.test.js dice-run-occult-2026/scripts/*.test.js"
   },

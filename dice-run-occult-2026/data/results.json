@@ -97,26 +97,55 @@
         },
         "maxFixedReceived": 75,
         "endGap": 0.001
+      },
+      "E": {
+        "kakera": {
+          "mean": 594.97,
+          "half": 4.26
+        },
+        "report": {
+          "mean": 188.37,
+          "half": 2.7
+        },
+        "credit": {
+          "mean": 5669.4,
+          "half": 87.87
+        },
+        "fixedUsed": {
+          "mean": 42.6,
+          "half": 0.37
+        },
+        "fixedGained": {
+          "mean": 26.6,
+          "half": 0.37
+        },
+        "maxFixedReceived": 55,
+        "endGap": 0
       }
     },
     "ranking": [
+      "E",
       "B",
       "A",
       "D",
       "C"
     ],
     "diffs": {
+      "B": {
+        "mean": 2.61,
+        "half": 1.42
+      },
       "A": {
-        "mean": 9.41,
-        "half": 4.99
+        "mean": 12.02,
+        "half": 5.11
       },
       "D": {
-        "mean": 52.22,
-        "half": 5.17
+        "mean": 54.83,
+        "half": 5.22
       },
       "C": {
-        "mean": 60.38,
-        "half": 5.38
+        "mean": 62.98,
+        "half": 5.44
       }
     }
   },
@@ -215,26 +244,54 @@
           "half": 0.1
         },
         "maxFixedReceived": 74
+      },
+      "E": {
+        "kakera": {
+          "mean": 599.51,
+          "half": 0.94
+        },
+        "report": {
+          "mean": 188.04,
+          "half": 0.63
+        },
+        "credit": {
+          "mean": 5685.06,
+          "half": 19.53
+        },
+        "fixedUsed": {
+          "mean": 42.68,
+          "half": 0.09
+        },
+        "fixedGained": {
+          "mean": 26.68,
+          "half": 0.09
+        },
+        "maxFixedReceived": 61
       }
     },
     "ranking": [
+      "E",
       "B",
       "A",
       "D",
       "C"
     ],
     "diffs": {
+      "B": {
+        "mean": 3.31,
+        "half": 0.32
+      },
       "A": {
-        "mean": 12.25,
-        "half": 1.11
+        "mean": 15.56,
+        "half": 1.12
       },
       "D": {
-        "mean": 52.89,
+        "mean": 56.2,
         "half": 1.22
       },
       "C": {
-        "mean": 62.23,
-        "half": 1.22
+        "mean": 65.54,
+        "half": 1.23
       }
     }
   },
@@ -266,5 +323,144 @@
       "uniform": true
     },
     "fixedLength": 300
+  },
+  "optimal": {
+    "expected": 602.695,
+    "limits": [
+      {
+        "limit": 16,
+        "expected": 602.6239
+      },
+      {
+        "limit": 18,
+        "expected": 602.6947
+      },
+      {
+        "limit": 20,
+        "expected": 602.6953
+      }
+    ],
+    "kakera": {
+      "mean": 600.96,
+      "half": 4.21
+    },
+    "report": {
+      "mean": 187.39,
+      "half": 2.73
+    },
+    "credit": {
+      "mean": 5605.8,
+      "half": 87.28
+    },
+    "diffs": {
+      "A": {
+        "mean": 18.01,
+        "half": 5.05
+      },
+      "B": {
+        "mean": 8.6,
+        "half": 2.44
+      },
+      "C": {
+        "mean": 68.98,
+        "half": 5.4
+      },
+      "D": {
+        "mean": 60.82,
+        "half": 5.18
+      },
+      "E": {
+        "mean": 5.99,
+        "half": 2.46
+      }
+    },
+    "divergences": 1552,
+    "scenes": [
+      {
+        "pos": 7,
+        "hand": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "optimal": 5,
+        "b": 0,
+        "count": 37,
+        "diff": 2.402,
+        "upTo": 8
+      },
+      {
+        "pos": 14,
+        "hand": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "optimal": 2,
+        "b": 0,
+        "count": 32,
+        "diff": 0.78,
+        "upTo": 11
+      },
+      {
+        "pos": 9,
+        "hand": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "optimal": 3,
+        "b": 0,
+        "count": 28,
+        "diff": 3.576,
+        "upTo": 17
+      },
+      {
+        "pos": 14,
+        "hand": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "optimal": 2,
+        "b": 0,
+        "count": 22,
+        "diff": 2.158,
+        "upTo": 39
+      },
+      {
+        "pos": 11,
+        "hand": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "optimal": 1,
+        "b": 0,
+        "count": 21,
+        "diff": 2.763,
+        "upTo": 7
+      }
+    ]
   }
 }

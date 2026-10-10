@@ -93,3 +93,38 @@ test('endValue: 方針ごとの最後の消費の期待値を厳密に求める'
   // 2から6でカケラ12。最大値は方針の値以上
   assert.ok(endValue(11, hand(2, 5)) >= endValue(11, hand(2, 5), chooseAtEnd));
 });
+
+test('play: 判断の関数には現在地・手持ち・残りの普通のサイコロの回数を渡す', () => {
+  const seen = [];
+  const policy = { decide: (pos, h, left) => { seen.push([pos, h.slice(), left]); return left === 1 && h[6] ? 6 : 0; }, atEnd: () => 1 };
+  // 開始時[6,1]。2→2、残り1回で6を使い8(12個)、1→9、最後に1→10→11
+  const { endState, ...result } = play(policy, { normal: [2, 1], fixed: [6, 1] }, { initial: 2 });
+  assert.deepEqual(result, { kakera: 12, report: 0, credit: 300, fixedUsed: 2, fixedGained: 0 });
+  assert.deepEqual(seen.map(([pos, , left]) => [pos, left]), [[0, 2], [2, 1], [8, 1]]);
+  assert.deepEqual(endState, { pos: 9, hand: [0, 1, 0, 0, 0, 0, 0] });
+});
+
+test('play: 上限の個数を持っているときに受け取った確定サイコロは別にしておき、最後に使い切る', () => {
+  // 上限1、開始時[5,4]で4は別にする。3→3、5で8(12個)、2→10→11。最後に別にした4で15(レポート8)
+  const seen = [];
+  const policy = { limit: 1, decide: (pos, h) => { seen.push(h.slice()); return pos === 3 && h[5] ? 5 : 0; }, atEnd: () => { throw new Error('使わない'); } };
+  const { endState, ...result } = play(policy, { normal: [3, 2], fixed: [5, 4] }, { initial: 2 });
+  assert.deepEqual(result, { kakera: 12, report: 8, credit: 300, fixedUsed: 2, fixedGained: 0 });
+  assert.deepEqual(seen[0], [0, 0, 0, 0, 0, 1, 0]);
+  assert.deepEqual(endState, { pos: 11, hand: [0, 0, 0, 0, 0, 0, 0] });
+});
+
+test('E: 手持ちの個数の5倍が残り回数に届くまではBと同じ', () => {
+  assert.equal(decide('E', 9, hand(3), 6), 0);
+  assert.equal(decide('E', 8, hand(4), 200), 4);
+  assert.equal(decide('E', 7, hand(1, 5), 1), 1);
+});
+
+test('E: 届いたらカケラ8のマス、なければスタートに止まれる確定サイコロも使う', () => {
+  assert.equal(decide('E', 9, hand(3), 5), 3);
+  assert.equal(decide('E', 6, hand(6, 6), 10), 6);
+  // 13から5でスタート。12から4か6ならCと同じく4
+  assert.equal(decide('E', 13, hand(5), 5), 5);
+  assert.equal(decide('E', 12, hand(4, 6), 10), 4);
+  assert.equal(decide('E', 1, hand(4, 6), 10), 0);
+});

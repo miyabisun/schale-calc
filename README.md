@@ -30,8 +30,11 @@ npm run build   # 保存済みのデータから、装備設計図の結果と g
 | `npm run build:normal` | `equipment-blueprint/data/campaign-normal-rewards.yaml`（`data/raw/` から作る） |
 | `npm run plan:onia-golden` | `equipment-blueprint/data/onia-golden-plan.yaml` と `equipment-blueprint/docs/onia-golden-plan.md` |
 | `npm run build:gacha` | `gacha/` の公開ページ・グラフ・計算結果の JSON |
-| `npm run build:dice-run` | `dice-run-occult-2026/index.html` と `dice-run-occult-2026/data/results.json`（保存済みの乱数表 `data/table.json` を使う） |
+| `npm run build:dice-run` | `dice-run-occult-2026/index.html` と `dice-run-occult-2026/data/results.json`（保存済みの乱数表 `data/table.json` と、次の行の `data/optimal.json` を使う） |
+| `npm run solve:dice-run` | `dice-run-occult-2026/data/optimal.json`（サイコロランの期待値が最大になる使い方の計算結果。`npm run build` には含まれない） |
 | `npm run fetch` | `equipment-blueprint/data/raw/`（SchaleDB から取得し直す） |
+
+`npm run solve:dice-run` は、手持ちの上限を16個・18個・20個と広げながら最適な使い方を計算するため、手元のPC（Ryzen 7 PRO 4750GE）で約3分かかり、メモリを最大約7GB使います。結果は `data/optimal.json` に保存してあるので、ページを作り直すだけなら実行は要りません。乱数表や盤面の計算を変えたときは、`npm run solve:dice-run` の後に `npm run build:dice-run` を実行します。
 
 サイコロランの乱数表を作り直す場合は `node dice-run-occult-2026/scripts/generate-table.js` を実行します。乱数表を変えると公開中の数値も変わります。
 

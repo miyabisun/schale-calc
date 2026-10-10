@@ -1,4 +1,5 @@
 // 保存済みの乱数テーブルで全戦略を走らせ、data/results.json と公開ページ index.html を書き出す。
+// 最適な使い方の結果は solve.js が書き出した data/optimal.json を読む。
 
 const fs = require('node:fs');
 const path = require('node:path');
@@ -50,6 +51,18 @@ const uniformity = (faces) => {
 const roll = rng(INDEPENDENT.seed);
 const independent = Array.from({ length: INDEPENDENT.patterns }, () => makePattern(roll, 200, 300));
 
+// 最適な使い方: 500パターンの集計と、同じパターン同士で比べた各戦略との差
+const solved = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'optimal.json'), 'utf8'));
+const optimal = {
+  expected: round(solved.limits.at(-1).expected, 3),
+  limits: solved.limits.map(({ limit, expected }) => ({ limit, expected: round(expected, 4) })),
+  ...Object.fromEntries(['kakera', 'report', 'credit'].map((k) => [k, brief(summarize(solved.main[k]))])),
+  diffs: Object.fromEntries(STRATEGIES.map((name) => [name,
+    brief(summarize(table.map((p, i) => solved.main.kakera[i] - play(name, p).kakera)))])),
+  divergences: solved.divergences,
+  scenes: solved.scenes.map((s) => ({ ...s, diff: round(s.diff, 3) })),
+};
+
 const results = {
   main: run(table, true),
   independent: { seed: INDEPENDENT.seed, ...run(independent, false) },
@@ -58,6 +71,7 @@ const results = {
     fixed: uniformity(table.flatMap((p) => p.fixed)),
     fixedLength: table[0].fixed.length,
   },
+  optimal,
 };
 
 fs.writeFileSync(path.join(ROOT, 'data', 'results.json'), `${JSON.stringify(results, null, 2)}\n`);
